@@ -2,6 +2,13 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.41] - 2026-10-24
+
+### Changed
+
+- Reference pages: the access message is `access-gate-gateway:access:v3`; the Move package is `sealed_storage` (ADR-0004).
+- `robots.txt`, a curated `llms.txt` and a generated `llms-full.txt` (the whole site in one file, built after `vitepress build`).
+
 ## [0.0.40] - 2026-10-24
 
 ### Fixed

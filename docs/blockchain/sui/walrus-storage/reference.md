@@ -53,7 +53,7 @@ type StorageCost = {
 When uploading through the **gated** relay, the client proves NFT ownership with a signed proof. The
 wire format is shared with the [Access Gate](/blockchain/sui/access-gate/) gateway:
 
-- **Personal message signed by the wallet (v2, audience-bound):** `nft-gate:access:v2` followed by the
+- **Personal message signed by the wallet (v2, audience-bound):** `access-gate-gateway:access:v3` followed by the
   gateway origin, gate id, network, nonce and (single-use gates only) the consume digest, one
   `key:value` line each. The gateway rebuilds it from its own origin, gate and network, so a
   signature is useless at any other relay, gate or network. The exact text is in the

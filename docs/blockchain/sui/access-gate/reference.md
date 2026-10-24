@@ -42,7 +42,7 @@ signed proof and on-chain pass ownership, failing **closed** on any ambiguity.
 - **Personal message signed by the wallet (v2, audience-bound):** ASCII, one `key:value` line each:
 
   ```text
-  nft-gate:access:v2
+  access-gate-gateway:access:v3
   origin:<canonical gateway origin>
   gate:<0x + 64 lower-case hex gate id>
   network:<localnet|devnet|testnet|mainnet>

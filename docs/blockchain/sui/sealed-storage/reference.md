@@ -7,7 +7,7 @@ from the `@meddleware/sealed-storage-client` SDK — see [SDK API](#sdk-api).
 
 | Thing | ID |
 | --- | --- |
-| `seal_policies` package | `0x0c8f73490b14836e6a7a724fb46b242cb061d04a5f193fd637159997f8a1773d` |
+| `sealed_storage` package | `0x0c8f73490b14836e6a7a724fb46b242cb061d04a5f193fd637159997f8a1773d` |
 | `PolicyConfig` object (version gate) | `0xee0403ba15c250223527150d147f29bedfb1ec46bb2282c341be462ff0ad7d1a` |
 
 Mainnet is pending; the app is enabled by configuration once the package and key-server committee are
@@ -34,7 +34,7 @@ ciphertext.
 ## Policies on-chain
 
 Each policy encodes its access condition into the encryption **identity** and is checked on-chain by
-the `seal_policies` Move package. The policies, identity layouts and the content-pointer registry are
+the `sealed_storage` Move package. The policies, identity layouts and the content-pointer registry are
 documented **with the Move package** and imported here at build time:
 
 - [On-chain overview](/blockchain/sui/onchain/sealed-storage/overview) — modules, identity layouts and

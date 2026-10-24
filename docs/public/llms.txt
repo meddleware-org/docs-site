@@ -1,0 +1,28 @@
+# Meddleware documentation
+
+> User documentation for Meddleware's permissionless, wallet-based tools on Sui and Walrus. No accounts: every tool works with a connected Sui wallet, and the on-chain packages are the source of truth.
+
+The full text of this site in one file: [llms-full.txt](https://docs.meddleware.co.uk/llms-full.txt). Developer documentation (SDKs, PTB patterns, integration, self-hosting): [dev.meddleware.co.uk/llms.txt](https://dev.meddleware.co.uk/llms.txt).
+
+## Start here
+
+- [Overview](https://docs.meddleware.co.uk/)
+- [Getting started on Sui](https://docs.meddleware.co.uk/blockchain/sui/getting-started)
+- [How the tools fit together](https://docs.meddleware.co.uk/blockchain/sui/architecture)
+
+## Tools
+
+- [Walrus Storage](https://docs.meddleware.co.uk/blockchain/sui/walrus-storage/): upload files to Walrus, manage their lifetime ([walkthrough](https://docs.meddleware.co.uk/blockchain/sui/walrus-storage/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/walrus-storage/reference))
+- [Sealed Storage](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/): encrypt with Seal, store on Walrus ([policies](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/policies), [walkthrough](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/reference))
+- [Access Gate](https://docs.meddleware.co.uk/blockchain/sui/access-gate/): NFT access passes ([walkthrough](https://docs.meddleware.co.uk/blockchain/sui/access-gate/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/access-gate/reference))
+- [Token Issuance](https://docs.meddleware.co.uk/blockchain/sui/onchain/token-issuance/overview): issue a Sui coin ([user guide](https://docs.meddleware.co.uk/blockchain/sui/onchain/token-issuance/user-guide))
+- [Treasury](https://docs.meddleware.co.uk/blockchain/sui/treasury/): the platform's on-chain revenue, read-only ([reference](https://docs.meddleware.co.uk/blockchain/sui/treasury/reference))
+
+## On-chain packages
+
+- [access_gate overview](https://docs.meddleware.co.uk/blockchain/sui/onchain/access-gate/overview), [user guide](https://docs.meddleware.co.uk/blockchain/sui/onchain/access-gate/user-guide)
+- [sealed_storage overview](https://docs.meddleware.co.uk/blockchain/sui/onchain/sealed-storage/overview), [user guide](https://docs.meddleware.co.uk/blockchain/sui/onchain/sealed-storage/user-guide)
+
+## Optional
+
+- [Status](https://status.meddleware.co.uk) ([JSON](https://status.meddleware.co.uk/api/status))

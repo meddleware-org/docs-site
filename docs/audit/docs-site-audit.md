@@ -658,3 +658,5 @@ fails the image). The production build and both generators run from a clean chec
   - **Measured:** type-check, lint (css, js, html), vitest (14 tests, 3 files; the new test red before the change), build (including the CSP inline-script check and the dist audit check), `check:licenses` and the audit gate pass. `img-src ... https:` is unchanged.
   - **Not verified:** the deployed header after release (read it with `curl -sI https://docs.meddleware.co.uk/` once 0.0.36 is deployed).
 - 2026-10-24 — repository renamed from `docs` to `docs-site` (workspace naming convention, `docs/architecture/ADR-0003-naming.md`): package, image, host and path names updated throughout. No finding, disposition or evidence changed.
+- 2026-10-24 — identifier alignment (`docs/architecture/ADR-0004-identifier-alignment.md`): reference pages updated (`access-gate-gateway:access:v3`, `sealed_storage`).
+- 2026-10-24 — `robots.txt`, curated `llms.txt`, and `llms-full.txt` generated after `vitepress build` from the published pages only (audit and generated API pages excluded; `check-dist-no-audit.mjs` still runs last). Build verified.
