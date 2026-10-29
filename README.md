@@ -45,7 +45,7 @@ runtime image serves with the shared `static-server`.
 
 This site is **user-facing**. Developer integration guides, self-host instructions, and white-label
 operator guides are intentionally **out of scope** — they live (planned) in each package's
-README/CLAUDE.md and will surface on the future `dev.meddleware.co.uk`. The auto-generated SDK API
+README/CLAUDE.md and will surface on the future `meddleware.dev`. The auto-generated SDK API
 reference *is* included here (useful to users and bots) but without the "wire it into your app"
 tutorials.
 

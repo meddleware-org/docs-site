@@ -23,7 +23,7 @@ import { dirname, join, posix, resolve } from 'node:path'
 // ── SITE (the only per-repo difference) ───────────────────────────────────────────────────────
 const SITE = 'docs'
 const OUT_BASE = 'blockchain/sui/onchain' // under docs/, served at /blockchain/sui/onchain/…
-const OTHER_SITE = { id: 'dev', origin: 'https://dev.meddleware.co.uk', base: 'sui/onchain' }
+const OTHER_SITE = { id: 'dev', origin: 'https://meddleware.dev', base: 'sui/onchain' }
 // ───────────────────────────────────────────────────────────────────────────────────────────────
 
 // Sui/Move packages whose on-chain docs are canonical in their own repo. `slug`/`title` are only

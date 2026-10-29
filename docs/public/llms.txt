@@ -2,7 +2,7 @@
 
 > User documentation for Meddleware's permissionless, wallet-based tools on Sui and Walrus. No accounts: every tool works with a connected Sui wallet, and the on-chain packages are the source of truth.
 
-The full text of this site in one file: [llms-full.txt](https://docs.meddleware.co.uk/llms-full.txt). Developer documentation (SDKs, PTB patterns, integration, self-hosting): [dev.meddleware.co.uk/llms.txt](https://dev.meddleware.co.uk/llms.txt).
+The full text of this site in one file: [llms-full.txt](https://docs.meddleware.co.uk/llms-full.txt). Developer documentation (SDKs, PTB patterns, integration, self-hosting): [meddleware.dev/llms.txt](https://meddleware.dev/llms.txt).
 
 ## Start here
 

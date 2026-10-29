@@ -23,7 +23,7 @@ source:
   flow and trust boundaries.
 - [Using passes and gates](/blockchain/sui/onchain/access-gate/user-guide) — what you can do, who can
   do it, and what to watch for.
-- [On-chain API reference](https://dev.meddleware.co.uk/sui/onchain/access-gate/api-reference) (developer
+- [On-chain API reference](https://meddleware.dev/sui/onchain/access-gate/api-reference) (developer
   site) — every function, event and abort code.
 
 ::: warning Event pruning
@@ -65,7 +65,7 @@ of that JSON; a gateway refuses any other encoding.
 The gateway consumes the nonce immediately (single-use replay protection) and, for single-use passes,
 verifies the on-chain consumption by digest. Two wire-identical implementations exist (Cloudflare
 Workers and Rust). Running one is covered in the developer guide
-[Deploy the access-gate gateway](https://dev.meddleware.co.uk/sui/access-gate/gateway); the exact message
+[Deploy the access-gate gateway](https://meddleware.dev/sui/access-gate/gateway); the exact message
 construction is in the generated [`personalMessage`](./wire-api/functions/personalMessage) reference.
 
 ## SDK API
@@ -79,6 +79,6 @@ Two SDKs, each with a generated reference:
   access-proof helpers a gateway verifies.
 
 ::: tip Deploying the gateway or integrating the SDK?
-See the [Access Gate integration guide](https://dev.meddleware.co.uk/sui/access-gate/) on the developer site — SDK setup, purchase/verify flow, challenge/proof protocol, and Rust/Worker gateway deployment.
+See the [Access Gate integration guide](https://meddleware.dev/sui/access-gate/) on the developer site — SDK setup, purchase/verify flow, challenge/proof protocol, and Rust/Worker gateway deployment.
 :::
 <!-- white-label: link to white-label gateway operator guide when published -->

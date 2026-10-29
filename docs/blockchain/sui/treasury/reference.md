@@ -80,6 +80,6 @@ from it (display data only) and falls back to the full node.
 
 ::: tip Developer note
 To read the same objects and events from code, use `@meddleware/access-gate-client` — see the
-[Access Gate integration guide](https://dev.meddleware.co.uk/sui/access-gate/) on the developer site.
+[Access Gate integration guide](https://meddleware.dev/sui/access-gate/) on the developer site.
 :::
 <!-- white-label: link to white-label treasury operator guide when published -->

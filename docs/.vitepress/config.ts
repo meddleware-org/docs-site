@@ -54,7 +54,7 @@ export default defineConfig({
           },
         ],
       },
-      { text: 'Developers', link: 'https://dev.meddleware.co.uk' },
+      { text: 'Developers', link: 'https://meddleware.dev' },
       // TODO white-label: operator nav entry (planned)
     ],
 

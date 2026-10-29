@@ -36,11 +36,11 @@ section per service (Walrus Storage, Sealed Storage, Access Gate, Treasury; DAO 
 ## Content boundary (docs vs dev)
 
 This site is **user-facing** — *what/how/when* for end users. **Out of scope** (lives in
-`dev.meddleware.co.uk`): developer integration guides, self-host instructions, "wire the SDK into
+`meddleware.dev`): developer integration guides, self-host instructions, "wire the SDK into
 your app" tutorials, and white-label operator guides. The auto-generated **SDK API reference is
 included** here (useful to users/bots), just without the integration how-to.
 
-The sister developer site lives at `dev.meddleware.co.uk` (package: `repos/dev-site/`, k8s:
+The sister developer site lives at `meddleware.dev` (package: `repos/dev-site/`, k8s:
 `post-bootstrap/dev-site/`). Each service's `reference.md` links into it via a `:::tip` callout. The nav
 also has a top-level "Developers →" link.
 

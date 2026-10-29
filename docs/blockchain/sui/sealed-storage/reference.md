@@ -41,7 +41,7 @@ documented **with the Move package** and imported here at build time:
   key properties.
 - [What the policies allow](/blockchain/sui/onchain/sealed-storage/user-guide) — who can decrypt, when,
   and the limits.
-- [On-chain API reference](https://dev.meddleware.co.uk/sui/onchain/sealed-storage/api-reference)
+- [On-chain API reference](https://meddleware.dev/sui/onchain/sealed-storage/api-reference)
   (developer site).
 
 ## Threshold committee
@@ -65,6 +65,6 @@ providers, and the manifest/byte helpers — is generated here:
 - [Seal client API](./api/)
 
 ::: tip Writing your own policy or integrating the SDK?
-See the [Sealed Storage integration guide](https://dev.meddleware.co.uk/sui/sealed-storage/) on the developer site — SDK setup, encrypt/store/decrypt flow, policy authoring in Move, and Vue composables.
+See the [Sealed Storage integration guide](https://meddleware.dev/sui/sealed-storage/) on the developer site — SDK setup, encrypt/store/decrypt flow, policy authoring in Move, and Vue composables.
 :::
 <!-- white-label: link to white-label policy operator guide when published -->

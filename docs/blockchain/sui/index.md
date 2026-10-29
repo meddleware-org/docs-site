@@ -38,5 +38,5 @@ New here? **[Getting started with Sui →](/blockchain/sui/getting-started)**
 
 ::: tip Developer documentation
 This site covers using the tools. SDK integration and self-hosting are covered on the
-[developer site](https://dev.meddleware.co.uk/sui/); white-label deployment guidance is still to come.
+[developer site](https://meddleware.dev/sui/); white-label deployment guidance is still to come.
 :::
