@@ -16,7 +16,7 @@
 **Deployed by:** `post-bootstrap/docs-site/overlays/default`; digest from `config/images.yaml`
 **Build args:** `CSP` only (the Content-Security-Policy string) — not secret, not a test switch; no `VITE_*`
 **Deployment status:** npm v0.0.33 and image `quay.io/meddleware-org/docs-site` 0.0.33 serving `docs.meddleware.co.uk` (`sha256:df851d1a…b6e6`; release tag `v0.0.33` = `7476a47`; released, signature verified and deployed 2026-10-18, rollout succeeded; 0.0.32 `sha256:b94c5b66…` was deployed 2026-10-09; live headers, an unknown path (404) and `/THIRD_PARTY_LICENSES` (200) re-checked 2026-10-18; live pages carry the republished testnet ids `access_gate` `0xd7ddaa94…`, PlatformConfig `0x3f81489d…`, `seal_policies` `0x0c8f7349…`, PolicyConfig `0xee0403ba…`)
-**Review date:** 2026-09-19 (first pass) · re-verified 2026-10-03 · re-verified 2026-10-09 · fixes 2026-10-18 (0.0.33, released and deployed)
+**Review date:** 2026-09-19 (first pass) · re-verified 2026-10-03 · re-verified 2026-10-09 · fixes 2026-10-18 (0.0.33, released and deployed); 0.0.42 re-verified 2026-10-30 (Point the developer-docs and indexer links at the machine zone (ADR-0005); current @meddleware packages)
 **Reviewer:** Internal review
 **Severity ceiling:** Low — static content: no wallet, chain access or secrets. The surfaces are the build-time supply chain, content integrity, and readers following stale links.
 **Status:** re-verified 2026-10-09; 0.0.33 fixes applied 2026-10-18 (commit `11865f9`; released and deployed 2026-10-18, signature verified, rollout succeeded)

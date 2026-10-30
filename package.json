@@ -1,6 +1,6 @@
 {
   "name": "@meddleware/docs-site",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "Meddleware developer tools documentation site (docs.meddleware.co.uk) — VitePress. Blockchain-agnostic with Sui as the first active chain.",
   "homepage": "https://docs.meddleware.co.uk/",
   "author": "Meddleware <dev@meddleware.co.uk>",
@@ -39,17 +39,17 @@
     "access": "public"
   },
   "dependencies": {
-    "@meddleware/access-gate-client": "^0.0.12",
-    "@meddleware/design-tokens": "^0.1.10",
-    "@meddleware/sealed-storage-client": "^0.0.25",
-    "@meddleware/ui": "^0.1.34"
+    "@meddleware/access-gate-client": "^0.0.13",
+    "@meddleware/design-tokens": "^0.1.11",
+    "@meddleware/sealed-storage-client": "^0.0.26",
+    "@meddleware/ui": "^0.1.35"
   },
   "devDependencies": {
-    "@meddleware/access-gate-sui": "^0.0.10",
-    "@meddleware/access-gate-gateway-client": "^0.0.21",
-    "@meddleware/sealed-storage-sui": "^0.0.10",
+    "@meddleware/access-gate-gateway-client": "^0.0.22",
+    "@meddleware/access-gate-sui": "^0.0.11",
+    "@meddleware/sealed-storage-sui": "^0.0.11",
     "@meddleware/token-issuance-template-sui": "^1.0.11",
-    "@meddleware/walrus-storage-client": "^0.0.32",
+    "@meddleware/walrus-storage-client": "^0.0.33",
     "@mysten/seal": "^1.5.0",
     "@mysten/sui": "^2.36.0",
     "@mysten/walrus": "~1.2.35",

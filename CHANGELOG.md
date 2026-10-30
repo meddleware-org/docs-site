@@ -2,6 +2,10 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.42] - 2026-10-30
+
+- Point the developer-docs and indexer links at the machine zone (ADR-0005); current @meddleware packages.
+
 ## [0.0.41] - 2026-10-24
 
 ### Changed
