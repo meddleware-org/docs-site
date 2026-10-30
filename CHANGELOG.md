@@ -2,6 +2,10 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.43] - 2026-10-30
+
+- Dependency updates (minor and patch groups) and workflow action bumps. No source change.
+
 ## [0.0.42] - 2026-10-30
 
 - Point the developer-docs and indexer links at the machine zone (ADR-0005); current @meddleware packages.
