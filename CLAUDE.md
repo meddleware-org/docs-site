@@ -6,16 +6,20 @@ The user-facing documentation site for the Meddleware Sui tools (`docs.meddlewar
 VitePress. Static content only — no wallet, no chain reads, no accounting logic. One site with a
 section per service (Walrus Storage, Sealed Storage, Access Gate, Treasury; DAO is a retired note).
 
+## Browser tests
+
+`npm run test:e2e` builds the site and runs the shared accessibility sweep (WCAG 2.2 AA and AAA in every colour mode × season, reflow, text
+size, forced colours, keyboard) over the pages in `e2e/pages.ts`; `E2E_BROWSERS=all` runs five browsers (CI does).
+
 ## Architectural invariants
 
 - **Static, thin, read-only.** No app logic. It documents the tools; it never talks to the chain or a
   wallet. Keep it a content site.
 - **Single site, sectioned.** All services live under one VitePress instance (one nav, one search
   index, one theme). Do not split into per-service docs subdomains.
-- **On-brand via design tokens.** Theming maps VitePress `--vp-c-brand-*` onto
-  `@meddleware/design-tokens` functional primaries (red accent + blue; **no gold/purple**) in
-  `.vitepress/theme/custom.css`. Do not hardcode brand hex — extend the token mapping so the docs
-  track the apps.
+- **On-brand via design tokens.** The theme is `@meddleware/vitepress-theme` (`.vitepress/theme/index.ts` re-exports it): every
+  `--vp-*` colour is a token role, so the colour mode, the seasons and the 7:1 contrast follow the apps (**no gold/purple**). The site
+  has no stylesheet of its own: to change how it looks, change the theme package (or the tokens), never add hex here.
 - **Output is pinned to `dist/`.** `outDir` in `.vitepress/config.ts` resolves to the repo-root
   `dist/` so the Dockerfile's `COPY --from=build /app/dist` (shared static-server pattern) works
   unchanged. Do not rely on VitePress's default `.vitepress/dist`.
@@ -49,7 +53,7 @@ also has a top-level "Developers →" link.
 | File | Purpose |
 | --- | --- |
 | `docs/.vitepress/config.ts` | Nav, sidebar, local search, `outDir`, dark-first appearance. |
-| `docs/.vitepress/theme/` | Default theme + design-token brand overrides (`custom.css`). |
+| `docs/.vitepress/theme/` | `export { default } from '@meddleware/vitepress-theme'` (the design-token theme, footer and landmark fixes). |
 | `scripts/gen-api.mjs` | TypeDoc → Markdown SDK reference per service (resilient). |
 | `docs/<service>/` | Per-service `index.md` (overview), `using.md`, `reference.md`, etc. |
 | `Dockerfile` | node:24 build → static-server runtime with `CLEAN_URLS` + `NOT_FOUND_PAGE` (no VITE_* args, no SPA fallback). |

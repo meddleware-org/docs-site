@@ -20,7 +20,7 @@ docs/
   access-gate/             NFT access gates
   .vitepress/
     config.ts              Nav, sidebar, search, brand theme
-    theme/                 Design-token brand overrides
+    theme/                 Re-exports @meddleware/vitepress-theme
 scripts/gen-api.mjs        TypeDoc autodoc for the SDK reference sections
 ```
 

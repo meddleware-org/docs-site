@@ -2,6 +2,10 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.44] - 2026-10-31
+
+- Shared VitePress theme and accessibility gates
+
 ## [0.0.43] - 2026-10-30
 
 - Dependency updates (minor and patch groups) and workflow action bumps. No source change.
