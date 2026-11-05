@@ -39,7 +39,7 @@ Any HTTP service can be placed **behind** a gate using the access-gate-gateway r
 signed proof and on-chain pass ownership, failing **closed** on any ambiguity.
 
 - **Challenge:** `GET /v1/challenge` returns `{ "nonce": "…", "expiresAt": … }`.
-- **Personal message signed by the wallet (v2, audience-bound):** ASCII, one `key:value` line each:
+- **Personal message signed by the wallet (v3, audience-bound):** ASCII, one `key:value` line each:
 
   ```text
   access-gate-gateway:access:v3
