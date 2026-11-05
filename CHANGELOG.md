@@ -2,6 +2,21 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.45] - 2026-11-05
+
+### Fixed
+
+- The footer's legal links are no longer hidden behind the fixed sidebar (`@meddleware/vitepress-theme` 0.0.2); VitePress 2.0.0-alpha.21.
+- Two reference pages label the signed access message v3, as the message string is.
+
+### Added
+
+- `npm run check:csp` runs in CI: every inline script of the build is allowed by the image's CSP (it also refuses `'unsafe-inline'` and an empty build).
+
+### Changed
+
+- Dependency alignment: `@meddleware/ui` ^0.1.38 (form-field edge contrast, sticky-offset and focus-not-obscured fixes), `@meddleware/design-tokens` ^0.1.13, `@meddleware/web-utils` ^0.0.2 and `@meddleware/frontend-config` ^0.0.2.
+
 ## [0.0.44] - 2026-10-31
 
 - Shared VitePress theme and accessibility gates
