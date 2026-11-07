@@ -47,7 +47,7 @@
     "@meddleware/design-tokens": "^0.1.13",
     "@meddleware/sealed-storage-client": "^0.0.26",
     "@meddleware/ui": "^0.1.40",
-    "@meddleware/vitepress-theme": "^0.0.3"
+    "@meddleware/vitepress-theme": "^0.0.4"
   },
   "devDependencies": {
     "@lhci/cli": "^0.15.1",

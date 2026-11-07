@@ -3,7 +3,6 @@
 import MeddlewareTheme from '@meddleware/vitepress-theme'
 import type { Theme } from 'vitepress'
 import NetworkNotice from './NetworkNotice.vue'
-import './sidebar.css'
 
 const theme: Theme = {
   extends: MeddlewareTheme,

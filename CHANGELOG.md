@@ -17,7 +17,7 @@ All notable changes to `@meddleware/docs` are documented here.
 - The "Coming soon" navigation entries, the stub page for other blockchains and the retired DAO page are gone; the navigation lists the tools, fees, security and privacy, help and the developer site. Home, `llms.txt` and page titles use the user-facing wording ("gate owner", "Meddleware").
 - Build scripts now come from `@meddleware/vitepress-theme` 0.0.3 (`mw-gen-onchain`, `mw-check-onchain-ids`, `mw-gen-llms-full`, `mw-check-dist-no-audit`) and `@meddleware/frontend-config` 0.0.7 (`mw-audit-gate`, `mw-third-party-licenses`, `mw-check-csp-inline`, `mw-sync`); the local copies and their tests are removed, and a test runs the on-chain id check against the real pages.
 - Takes `@meddleware/ui` ^0.1.40 and the reworded on-chain pages of `@meddleware/access-gate-sui` 0.0.12 and `@meddleware/token-issuance-template-sui` 1.0.12.
-- `docs/.vitepress/theme/sidebar.css`: keeps a focused sidebar item out from under the navigation bar when the sidebar scrolls (WCAG 2.4.11).
+- The sidebar keeps a focused item out from under the navigation bar when it scrolls (WCAG 2.4.11): provided by `@meddleware/vitepress-theme` 0.0.4, so the site carries no stylesheet of its own.
 - The browser tests cover eleven pages (new: getting started, walkthrough, Token Issuance, fees, security, FAQ, glossary).
 
 ## [0.0.46] - 2026-11-06
