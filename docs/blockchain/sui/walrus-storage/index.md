@@ -1,54 +1,78 @@
+---
+title: Walrus Storage
+description: Upload files to Walrus decentralised storage from your browser, understand how long they are kept and what it costs, and extend them before they expire.
+---
+
 # Walrus Storage
 
-Upload files to [Walrus](https://walrus.xyz) — decentralised "blob" storage on Sui — and manage how
-long they live. Open the app at [sui-walrus-storage.meddleware.co.uk](https://sui-walrus-storage.meddleware.co.uk).
+Upload files to [Walrus](https://walrus.xyz), a decentralised network that stores "blobs" (files) and records their lifetime
+on Sui, and manage how long they are kept. Open the app at
+[sui-walrus-storage.meddleware.co.uk](https://sui-walrus-storage.meddleware.co.uk), or use the **Walrus Storage** tab of the
+[dashboard](/blockchain/sui/dashboard).
+
+This page describes the tool on Sui **testnet**. [Getting started](/blockchain/sui/getting-started#where-the-tools-run) says which
+networks are live.
 
 ## What it is
 
-Walrus stores arbitrary files (called **blobs**) across a decentralised network, with the metadata and
-lifetime tracked on Sui. The Meddleware Walrus Storage app is a thin front-end for it: connect a
-wallet, upload a file, get back a **blob ID**, and later list and extend the blobs you own.
+Walrus spreads each file across many independent storage nodes, so no single party holds or controls it. In the app you connect a
+wallet, upload a file, and get back a **blob ID** (the file's permanent name on Walrus) and a link to read it. Later you can list the
+blobs your wallet owns and extend their storage.
 
 ## When to use it
 
-- You need **durable, decentralised** file storage addressable by a stable ID.
-- You're storing content for an app, NFT media, datasets, or documents.
-- You want to store **encrypted** content — pair it with [Sealed Storage](/blockchain/sui/sealed-storage/), which
-  uses Walrus underneath.
+- You need file storage that does not depend on one company, addressed by a stable ID.
+- You are storing media, documents or datasets for an app or an NFT.
+- You want to store **encrypted** content: [Sealed Storage](/blockchain/sui/sealed-storage/) uses Walrus underneath.
 
-When **not** to: Walrus is not a permanent free drive. Storage is paid and **time-bounded** (see
-below), and blobs are public unless you encrypt them first.
+It is not a free, permanent drive. Storage is paid for and **time-limited**, and files are public unless you encrypt them first.
 
-## The one thing to understand: blobs expire
+## Blobs expire
 
-::: warning Walrus storage is time-bounded
-A blob is stored for a number of **epochs** (Walrus's unit of time), not forever. When the paid
-period ends, the blob can be deleted by the network. If you need to keep something, **extend its
-lifetime before it expires** — the app's *My Blobs* view lets you do this.
+::: warning Walrus storage is time-limited
+A blob is stored for a number of **epochs**, Walrus's unit of time. On mainnet an epoch is about two weeks. When the paid period
+ends the network may delete the blob. To keep a file, **extend it before it expires**: the **My Blobs** tab does this, and flags a
+blob as **Expiring soon**.
 :::
 
-Roughly: more epochs = longer storage = higher up-front cost. The app shows you the cost before you
-confirm, and long-term durations are supported for content you intend to keep.
+More epochs means a longer life and a higher price. One upload can reserve up to **53 epochs**; you reach longer lifetimes by
+extending later. The app shows the cost before you confirm.
 
-## Public vs gated uploads (relays)
+## Permanent or deletable
 
-Browser uploads go through an **upload relay**. Two modes:
+When you upload you choose **Permanent** (the default) or untick it for a **deletable** blob.
 
-- **Public relay** — the default fallback (Mysten's public relay). Works for anyone.
-- **Gated relay** — Meddleware's relay, gated by an [Access Gate](/blockchain/sui/access-gate/) NFT. You prove you
-  hold a valid pass and the relay accepts your upload. A small **tip** covers the relay's costs, and
-  the app caps the tip so you never overpay.
+- **Permanent**: nobody, including you, can remove it before it expires. If you upload the same file again, the app notices and
+  offers to extend the copy you already have instead.
+- **Deletable**: you can remove the blob early and reclaim the unused storage.
 
-If you don't hold a pass, uploads simply use the public relay. Either way, the blob ends up on the
-same Walrus network.
+## What you pay
+
+You need two coins in your wallet:
+
+- **WAL**, Walrus's storage token, pays for the storage. It depends on the file size and the number of epochs.
+- **SUI** pays the network fee ("gas") and, through Meddleware's relay, a small relay fee. Meddleware's relay may also require a pass.
+
+See [Fees](/blockchain/sui/fees) for the figures and who receives each part.
+
+## Meddleware's relay and the public relay
+
+Your browser cannot write to Walrus directly, so uploads go through an **upload relay**.
+
+- **Meddleware's relay** is what the app uses by default. On testnet it is **pass-gated**: you need an access pass, which the app
+  sells you on the spot if you have none (see [the walkthrough](/blockchain/sui/walrus-storage/walkthrough#buy-an-upload-pass)).
+  A small **relay fee** (a "tip") goes with each upload, and the app never pays more than a fixed ceiling.
+- **The public Walrus relay** is a fallback. The app uses it only if Meddleware's relay is not configured or is not responding.
+  While Meddleware's relay is up, a wallet without a pass is asked to buy one and is **not** sent to the public relay.
+
+Either way the file ends up on the same Walrus network.
 
 ## What you get back
 
-After an upload completes you receive a **blob ID** — the stable handle you use to read the content
-back (via a Walrus aggregator) or to reference it elsewhere. See [Reference](/blockchain/sui/walrus-storage/reference)
-for the exact shapes.
+After an upload you see **Uploaded** with the **Blob ID**, a **URL** from which anyone can read the file, and the certification
+transaction. Keep the blob ID: it is how you, or anyone, reads the file back. See the [reference](/blockchain/sui/walrus-storage/reference) for the details.
 
 ## Next
 
-- **[Walkthrough](/blockchain/sui/walrus-storage/walkthrough)** — upload, view, and extend blobs step by step.
-- **[Reference](/blockchain/sui/walrus-storage/reference)** — blob/relay shapes and the SDK API.
+- **[Walkthrough](/blockchain/sui/walrus-storage/walkthrough)**: upload, view and extend blobs step by step.
+- **[Reference](/blockchain/sui/walrus-storage/reference)**: limits, costs and the messages you may see.

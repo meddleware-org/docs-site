@@ -1,6 +1,6 @@
 # Meddleware documentation
 
-> User documentation for Meddleware's permissionless, wallet-based tools on Sui and Walrus. No accounts: every tool works with a connected Sui wallet, and the on-chain packages are the source of truth.
+> User documentation for Meddleware's permissionless, wallet-based tools on Sui and Walrus: store files, keep them private, sell access passes, issue a coin and read the treasury. No accounts: every tool works with a connected Sui wallet, and the on-chain packages are the source of truth.
 
 The full text of this site in one file: [llms-full.txt](https://docs.meddleware.co.uk/llms-full.txt). Developer documentation (SDKs, PTB patterns, integration, self-hosting): [meddleware.dev/llms.txt](https://meddleware.dev/llms.txt).
 
@@ -9,20 +9,31 @@ The full text of this site in one file: [llms-full.txt](https://docs.meddleware.
 - [Overview](https://docs.meddleware.co.uk/)
 - [Getting started on Sui](https://docs.meddleware.co.uk/blockchain/sui/getting-started)
 - [How the tools fit together](https://docs.meddleware.co.uk/blockchain/sui/architecture)
+- [Dashboard](https://docs.meddleware.co.uk/blockchain/sui/dashboard)
 
 ## Tools
 
 - [Walrus Storage](https://docs.meddleware.co.uk/blockchain/sui/walrus-storage/): upload files to Walrus, manage their lifetime ([walkthrough](https://docs.meddleware.co.uk/blockchain/sui/walrus-storage/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/walrus-storage/reference))
 - [Sealed Storage](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/): encrypt with Seal, store on Walrus ([policies](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/policies), [walkthrough](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/sealed-storage/reference))
 - [Access Gate](https://docs.meddleware.co.uk/blockchain/sui/access-gate/): NFT access passes ([walkthrough](https://docs.meddleware.co.uk/blockchain/sui/access-gate/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/access-gate/reference))
-- [Token Issuance](https://docs.meddleware.co.uk/blockchain/sui/onchain/token-issuance/overview): issue a Sui coin ([user guide](https://docs.meddleware.co.uk/blockchain/sui/onchain/token-issuance/user-guide))
-- [Treasury](https://docs.meddleware.co.uk/blockchain/sui/treasury/): the platform's on-chain revenue, read-only ([reference](https://docs.meddleware.co.uk/blockchain/sui/treasury/reference))
+- [Token Issuance](https://docs.meddleware.co.uk/blockchain/sui/token-issuance/): deploy your own Sui coin ([walkthrough](https://docs.meddleware.co.uk/blockchain/sui/token-issuance/walkthrough), [reference](https://docs.meddleware.co.uk/blockchain/sui/token-issuance/reference))
+- [Treasury](https://docs.meddleware.co.uk/blockchain/sui/treasury/): the platform's treasury and pass activity, read-only ([reference](https://docs.meddleware.co.uk/blockchain/sui/treasury/reference))
+
+## Before you use them, and help
+
+- [Fees](https://docs.meddleware.co.uk/blockchain/sui/fees): every fee, the current default and who receives it
+- [Security and privacy](https://docs.meddleware.co.uk/blockchain/sui/security-and-privacy)
+- [Questions and troubleshooting](https://docs.meddleware.co.uk/blockchain/sui/faq)
+- [Glossary](https://docs.meddleware.co.uk/blockchain/sui/glossary)
+- [Status and roadmap](https://docs.meddleware.co.uk/blockchain/sui/status-and-roadmap)
 
 ## On-chain packages
 
 - [access_gate overview](https://docs.meddleware.co.uk/blockchain/sui/onchain/access-gate/overview), [user guide](https://docs.meddleware.co.uk/blockchain/sui/onchain/access-gate/user-guide)
 - [sealed_storage overview](https://docs.meddleware.co.uk/blockchain/sui/onchain/sealed-storage/overview), [user guide](https://docs.meddleware.co.uk/blockchain/sui/onchain/sealed-storage/user-guide)
+- [token template overview](https://docs.meddleware.co.uk/blockchain/sui/onchain/token-issuance/overview), [what your coin can do](https://docs.meddleware.co.uk/blockchain/sui/onchain/token-issuance/user-guide)
 
 ## Optional
 
 - [Status](https://status.meddleware.co.uk) ([JSON](https://status.meddleware.co.uk/api/status))
+- [Roadmap](https://roadmap.meddleware.co.uk)

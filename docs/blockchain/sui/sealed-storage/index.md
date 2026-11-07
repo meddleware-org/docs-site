@@ -1,68 +1,80 @@
+---
+title: Sealed Storage
+description: Encrypt a file in your browser, store it on Walrus and control on-chain who can open it - pass holders only, or anyone after a set time.
+---
+
 # Sealed Storage
 
-Encrypt a file in your browser, store the ciphertext on [Walrus](/blockchain/sui/walrus-storage/), and let only the
-right people decrypt it — with the access rule enforced **on-chain**. Open the app at
-[sui-sealed-storage.meddleware.co.uk](https://sui-sealed-storage.meddleware.co.uk).
+Encrypt a file in your browser, store the encrypted bytes on [Walrus](/blockchain/sui/walrus-storage/), and let only the right
+people open it, with the rule enforced **on-chain**. Open the app at
+[sui-sealed-storage.meddleware.co.uk](https://sui-sealed-storage.meddleware.co.uk), or use the **Sealed Storage** tab of the
+[dashboard](/blockchain/sui/dashboard).
+
+This page describes the tool on Sui **testnet**. [Getting started](/blockchain/sui/getting-started#where-the-tools-run) says which
+networks are live.
 
 ## What it is
 
 Sealed Storage combines three things:
 
-- **[Seal](https://seal-docs.wal.app/)** — threshold encryption where the decryption keys are held by
-  a committee of independent **key servers**, not by any single party (or by Meddleware).
-- **[Walrus](/blockchain/sui/walrus-storage/)** — decentralised storage for the encrypted bytes.
-- A **policy** — an on-chain rule that decides who is allowed to decrypt.
+- **[Seal](https://seal-docs.wal.app/)** is threshold encryption. The keys that open a file are held by a committee of
+  independent **key servers**, not by one party and not by Meddleware.
+- **[Walrus](/blockchain/sui/walrus-storage/)** stores the encrypted bytes.
+- A **policy** is an on-chain rule that decides who may open the file.
 
-You encrypt under a policy, share a small **manifest** (a pointer), and anyone who satisfies the
-policy can decrypt. Nobody else can — even though the ciphertext itself is stored publicly.
+You encrypt under a policy and keep (or share) a small **manifest**. Anyone who meets the policy can open the file. Nobody else can,
+even though the encrypted bytes are stored publicly.
 
 ## When to use it
 
-- You want to store something **private** on public/decentralised storage.
-- You want access tied to an **on-chain condition** — for example, "only holders of this
-  [Access Gate](/blockchain/sui/access-gate/) pass" or "only after a certain time".
-- You want to **share** encrypted content without running your own key server or handing anyone a raw
-  key.
+- You want to keep something **private** on public, decentralised storage.
+- You want access tied to an **on-chain condition**: "only holders of this [Access Gate](/blockchain/sui/access-gate/) pass", or "only after
+  this date".
+- You want to **share** encrypted content without running a key server or handing anyone a raw key.
 
-When plain [Walrus Storage](/blockchain/sui/walrus-storage/) is enough: if the content isn't sensitive, skip
-encryption.
+If the content is not sensitive, plain [Walrus Storage](/blockchain/sui/walrus-storage/) is simpler.
 
-## How it works, in three steps
+## How it works
 
-1. **Encrypt** — the file is encrypted in your browser under the policy you choose. No key material
-   ever touches a server.
-2. **Store** — the opaque ciphertext is uploaded to Walrus; you keep the returned blob ID in the
-   manifest.
-3. **Decrypt** — you sign **one** wallet message (which mints a short-lived session key); a threshold
-   of the key servers releases key shares **only if** the on-chain policy check passes.
-
-```
- encrypt (browser)         store            decrypt (if policy allows)
-   file → ciphertext  →  Walrus blob  →  sign once → committee releases shares → file
-             ▲
-        policy: who may decrypt (NFT pass / time-lock / …)
-```
+1. **Encrypt.** Your browser encrypts the file under the policy you choose. No key material ever reaches a Meddleware server.
+2. **Store.** The encrypted file is uploaded to Walrus. The app gives you a **manifest** that points to it.
+3. **Open.** To open it you sign **one** wallet message, which creates a short-lived session. If the on-chain policy approves you, a threshold
+   of the key servers releases their key shares and the file is decrypted in your browser.
 
 ## The manifest
 
-Sealing produces a small **manifest** — the portable pointer you share or save. It records the policy
-type, the encryption **identity**, the Walrus blob ID, the network, and any non-secret parameters
-(like which gate). It contains **no secrets**; it's just enough to locate the ciphertext and rebuild
-the on-chain access check. See [Reference](/blockchain/sui/sealed-storage/reference).
+Sealing produces a small **manifest** file: the pointer you save or share. It records the policy, the encryption identity, the
+Walrus blob ID, the network and any non-secret settings (such as the gate). It holds **no secrets**, but you need it to open the file, so
+keep it. See the [reference](/blockchain/sui/sealed-storage/reference#the-manifest).
+
+## What it costs and what the limits are
+
+- Meddleware charges **no fee** for sealing or opening. Signing the message is free.
+- The app stores the encrypted file on Walrus for you through a public Walrus publisher, so you need no WAL. Check the **Confirm** step: it
+  states how many epochs the file is stored for (the default is 5). After that the file is gone, even though the key servers still work.
+  To keep it longer, extend the blob you now own in [Walrus Storage](/blockchain/sui/walrus-storage/walkthrough#extend-a-blob).
+- The default size limit is about **10 MiB** per file.
+- Publishing a discovery pointer (optional, for pass-gated content) is a normal transaction and costs gas.
 
 ## Who holds the keys?
 
-No one you have to trust unilaterally. Decryption keys are split across a **committee** of independent
-key servers; a configurable **threshold** (e.g. 2 of 3) must agree. Meddleware never holds your keys,
-and the app never sends key material to a server.
+Decryption keys are split across a **committee** of independent key servers. A threshold of them (for example 2 of 3) must agree before a
+file opens, so no single server can open your files, and one being offline does not stop you. Meddleware never holds your keys. The
+trust model, and what happens if too few servers answer, is on [Security and privacy](/blockchain/sui/security-and-privacy#sealed-storage).
 
-::: tip Network availability
-Committee mode currently runs on **testnet**. Mainnet is enabled purely by configuration once the
-committee is available — the app shows a clear notice until then.
-:::
+## Know before you seal
+
+These points are shown in the app too:
+
+- The threshold of key servers together *could* decrypt, and if fewer are online than the threshold, **nobody** can until they return.
+- The policy rules are on-chain code. Until the package's publisher makes it permanently unchangeable, an upgrade could change access to
+  content that is already sealed.
+- Once someone has opened a file, losing their pass does not take that access back.
+- Labels and the gate a file is sealed to are public. Only the content is encrypted.
+- The encrypted file lives on Walrus for a limited time.
 
 ## Next
 
-- **[Walkthrough](/blockchain/sui/sealed-storage/walkthrough)** — encrypt, share, and decrypt step by step.
-- **[Policies](/blockchain/sui/sealed-storage/policies)** — the access rules you can choose, and when to use each.
-- **[Reference](/blockchain/sui/sealed-storage/reference)** — manifest shape and the SDK API.
+- **[Walkthrough](/blockchain/sui/sealed-storage/walkthrough)**: encrypt, share and open a file step by step.
+- **[Policies](/blockchain/sui/sealed-storage/policies)**: the access rules you can choose.
+- **[Reference](/blockchain/sui/sealed-storage/reference)**: the manifest, limits and messages.

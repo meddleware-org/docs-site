@@ -3,9 +3,9 @@
 ## Scope
 
 This policy covers security issues in the `@meddleware/docs-site` source — the VitePress config and theme
-(`docs/.vitepress/**`), the build-time generators and checks (`scripts/gen-api.mjs` TypeDoc autodoc,
-`scripts/gen-onchain.mjs` Move-package pages, `scripts/check-onchain-ids.mjs`,
-`scripts/check-dist-no-audit.mjs`, `scripts/check-csp-inline.mjs`, `scripts/third-party-licenses.mjs`),
+(`docs/.vitepress/**`), the build-time generator `scripts/gen-api.mjs` (TypeDoc autodoc) and the checks it
+runs through `@meddleware/vitepress-theme` and `@meddleware/frontend-config` (`mw-gen-onchain`,
+`mw-check-onchain-ids`, `mw-check-dist-no-audit`, `mw-check-csp-inline`, `mw-third-party-licenses`),
 and the Markdown content (`docs/**`).
 
 It does not cover VitePress/TypeDoc themselves, `static-server` (which serves the built site — see
@@ -17,11 +17,11 @@ These invariants are load-bearing. A report demonstrating that any is violated i
 treated as high severity:
 
 1. **Static, thin, read-only.** The site has no app logic — it never talks to a wallet or the chain.
-2. **Build-time import integrity.** `gen-api.mjs` (SDK autodoc) and `gen-onchain.mjs` (on-chain Move
+2. **Build-time import integrity.** `gen-api.mjs` (SDK autodoc) and `mw-gen-onchain` (on-chain Move
    package pages) consume published `@meddleware/*` packages at build time from a committed lockfile
    and fail soft on a missing package; a docs build cannot pull an unexpected release. The on-chain ids
    typed into the reference pages are checked against the clients' `deployments` records on every
-   build (`check-onchain-ids.mjs`), and the internal audit tree never reaches `dist/` or the npm
+   build (`mw-check-onchain-ids`), and the internal audit tree never reaches `dist/` or the npm
    package.
 3. **No off-origin script/iframe in content or theme; brand via design tokens.** No Markdown page or
    theme file loads an off-origin resource, and no secret leaks into `dist/`.

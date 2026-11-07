@@ -2,6 +2,24 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.47] - 2026-11-07
+
+### Added
+
+- User pages: Token Issuance (overview, walkthrough, reference), Dashboard, Status and roadmap, Questions and troubleshooting (with the messages the apps show), Glossary, Fees (every fee, current default, who receives it, from the cost model) and Security and privacy (custody, what Meddleware can and cannot see or do, the Sealed Storage trust model, data handling, legal notices).
+- `NetworkNotice` (home and getting started): "Live on Sui testnet; mainnet is coming." or "Live on Sui testnet and mainnet.", read from `docs/.vitepress/network.json`, which `npm run gen:network` writes from the clients' deployment records and CI checks (`npm run check:network`). Every other page says "testnet" and points to it.
+- Tests: the notice and its wording; every page has a title and description, is in the sidebar, and claims no live mainnet; banned developer wording stays off the pages.
+
+### Changed
+
+- Content reviewed against the apps: the Walrus Storage, Sealed Storage and Access Gate walkthroughs now use the real tab, step and button labels (Encrypt, Decrypt and Unlock are separate tabs; credits; Permanent; Show cost then Extend), the real fees and limits, and the real messages. Corrected: the public Walrus relay is a fallback only while Meddleware's relay is unavailable (a wallet without a pass is asked to buy one), and the Access Gate console is for gate owners (buyers purchase in the seller's app).
+- The reference pages keep the user-level facts (settings, fees, limits, permanent rules, messages, identifiers); developer detail (wire formats, JSON object shapes, event and function names, SDK types) is replaced by a short "For developers" link to the developer site.
+- The "Coming soon" navigation entries, the stub page for other blockchains and the retired DAO page are gone; the navigation lists the tools, fees, security and privacy, help and the developer site. Home, `llms.txt` and page titles use the user-facing wording ("gate owner", "Meddleware").
+- Build scripts now come from `@meddleware/vitepress-theme` 0.0.3 (`mw-gen-onchain`, `mw-check-onchain-ids`, `mw-gen-llms-full`, `mw-check-dist-no-audit`) and `@meddleware/frontend-config` 0.0.7 (`mw-audit-gate`, `mw-third-party-licenses`, `mw-check-csp-inline`, `mw-sync`); the local copies and their tests are removed, and a test runs the on-chain id check against the real pages.
+- Takes `@meddleware/ui` ^0.1.40 and the reworded on-chain pages of `@meddleware/access-gate-sui` 0.0.12 and `@meddleware/token-issuance-template-sui` 1.0.12.
+- `docs/.vitepress/theme/sidebar.css`: keeps a focused sidebar item out from under the navigation bar when the sidebar scrolls (WCAG 2.4.11).
+- The browser tests cover eleven pages (new: getting started, walkthrough, Token Issuance, fees, security, FAQ, glossary).
+
 ## [0.0.46] - 2026-11-06
 
 ### Changed

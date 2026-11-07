@@ -8,88 +8,107 @@ import { existsSync, readFileSync } from 'node:fs'
 // the Dockerfile's `COPY --from=build /app/dist` (shared static-server pattern) works unchanged.
 
 // Sidebar groups for the canonical on-chain docs imported from the Sui Move package repos by
-// scripts/gen-onchain.mjs (generated, git-ignored). Absent (e.g. `vitepress dev` without the
+// mw-gen-onchain (generated, git-ignored). Absent (e.g. `vitepress dev` without the
 // prebuild step) → no on-chain groups; the rest of the site is unaffected.
 const onchainSidebarFile = fileURLToPath(new URL('./generated/onchain-sidebar.json', import.meta.url))
 const onchainSidebar: DefaultTheme.SidebarItem[] = existsSync(onchainSidebarFile)
   ? JSON.parse(readFileSync(onchainSidebarFile, 'utf8'))
   : []
 
+const S = '/blockchain/sui'
+
 const nav: DefaultTheme.NavItem[] = [
+  { text: 'Get started', link: `${S}/getting-started` },
   {
-    text: 'Blockchain',
+    text: 'Tools',
     items: [
-      {
-        text: 'Active',
-        items: [{ text: 'Sui', link: '/blockchain/sui/' }],
-      },
-      {
-        text: 'Coming soon',
-        items: [{ text: 'More blockchains', link: '/blockchain/' }],
-      },
+      { text: 'Dashboard', link: `${S}/dashboard` },
+      { text: 'Walrus Storage', link: `${S}/walrus-storage/` },
+      { text: 'Sealed Storage', link: `${S}/sealed-storage/` },
+      { text: 'Access Gate', link: `${S}/access-gate/` },
+      { text: 'Token Issuance', link: `${S}/token-issuance/` },
+      { text: 'Treasury', link: `${S}/treasury/` },
     ],
   },
+  { text: 'Fees', link: `${S}/fees` },
+  { text: 'Security and privacy', link: `${S}/security-and-privacy` },
+  { text: 'Help', link: `${S}/faq` },
   { text: 'Developers', link: 'https://meddleware.dev' },
-  // TODO white-label: operator nav entry (planned)
 ]
 
 const sidebar: DefaultTheme.Sidebar = {
-  '/blockchain/sui/': [
+  [`${S}/`]: [
     {
-      text: 'Sui',
+      text: 'Start here',
       items: [
-        { text: 'Overview', link: '/blockchain/sui/' },
-        { text: 'Getting started', link: '/blockchain/sui/getting-started' },
-        { text: 'How the tools fit together', link: '/blockchain/sui/architecture' },
+        { text: 'Overview', link: `${S}/` },
+        { text: 'Getting started', link: `${S}/getting-started` },
+        { text: 'How the tools fit together', link: `${S}/architecture` },
+        { text: 'Dashboard', link: `${S}/dashboard` },
       ],
     },
     {
       text: 'Walrus Storage',
       collapsed: true,
       items: [
-        { text: 'Overview', link: '/blockchain/sui/walrus-storage/' },
-        { text: 'Walkthrough', link: '/blockchain/sui/walrus-storage/walkthrough' },
-        { text: 'Reference', link: '/blockchain/sui/walrus-storage/reference' },
+        { text: 'Overview', link: `${S}/walrus-storage/` },
+        { text: 'Walkthrough', link: `${S}/walrus-storage/walkthrough` },
+        { text: 'Reference', link: `${S}/walrus-storage/reference` },
       ],
     },
     {
       text: 'Sealed Storage',
       collapsed: true,
       items: [
-        { text: 'Overview', link: '/blockchain/sui/sealed-storage/' },
-        { text: 'Walkthrough', link: '/blockchain/sui/sealed-storage/walkthrough' },
-        { text: 'Policies', link: '/blockchain/sui/sealed-storage/policies' },
-        { text: 'Reference', link: '/blockchain/sui/sealed-storage/reference' },
+        { text: 'Overview', link: `${S}/sealed-storage/` },
+        { text: 'Walkthrough', link: `${S}/sealed-storage/walkthrough` },
+        { text: 'Policies', link: `${S}/sealed-storage/policies` },
+        { text: 'Reference', link: `${S}/sealed-storage/reference` },
       ],
     },
     {
       text: 'Access Gate',
       collapsed: true,
       items: [
-        { text: 'Overview', link: '/blockchain/sui/access-gate/' },
-        { text: 'Walkthrough', link: '/blockchain/sui/access-gate/walkthrough' },
-        { text: 'Reference', link: '/blockchain/sui/access-gate/reference' },
+        { text: 'Overview', link: `${S}/access-gate/` },
+        { text: 'Walkthrough', link: `${S}/access-gate/walkthrough` },
+        { text: 'Reference', link: `${S}/access-gate/reference` },
+      ],
+    },
+    {
+      text: 'Token Issuance',
+      collapsed: true,
+      items: [
+        { text: 'Overview', link: `${S}/token-issuance/` },
+        { text: 'Walkthrough', link: `${S}/token-issuance/walkthrough` },
+        { text: 'Reference', link: `${S}/token-issuance/reference` },
       ],
     },
     {
       text: 'Treasury',
       collapsed: true,
       items: [
-        { text: 'Overview', link: '/blockchain/sui/treasury/' },
-        { text: 'Reference', link: '/blockchain/sui/treasury/reference' },
+        { text: 'Overview', link: `${S}/treasury/` },
+        { text: 'Reference', link: `${S}/treasury/reference` },
       ],
     },
-    // Canonical on-chain docs (generated from the Move packages — scripts/gen-onchain.mjs).
-    ...onchainSidebar,
-  ],
-  '/blockchain/': [
     {
-      text: 'Blockchains',
+      text: 'Before you use them',
       items: [
-        { text: 'Overview', link: '/blockchain/' },
-        { text: 'Sui', link: '/blockchain/sui/' },
+        { text: 'Fees', link: `${S}/fees` },
+        { text: 'Security and privacy', link: `${S}/security-and-privacy` },
       ],
     },
+    {
+      text: 'Help',
+      items: [
+        { text: 'Questions and troubleshooting', link: `${S}/faq` },
+        { text: 'Glossary', link: `${S}/glossary` },
+        { text: 'Status and roadmap', link: `${S}/status-and-roadmap` },
+      ],
+    },
+    // Canonical on-chain docs (generated from the Move packages by mw-gen-onchain).
+    ...onchainSidebar,
   ],
 }
 
@@ -99,7 +118,7 @@ export default baseConfig({
   configUrl: import.meta.url,
   title: 'Meddleware Docs',
   description:
-    'Developer tools for decentralised applications — documentation for the Meddleware Sui platform and beyond.',
+    'How to use the Meddleware tools on Sui: store files on Walrus, encrypt them, sell access passes, issue a coin and read the treasury, with your own wallet.',
   nav,
   sidebar,
   extra: {

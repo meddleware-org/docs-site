@@ -34,7 +34,10 @@ jobs:
         run: npm ci
 
       - name: Audit dependencies
-        run: node .github/audit-gate.mjs
+        run: npx mw-audit-gate
+
+      - name: Shared files and deployment records are current
+        run: npm run check:network && npx mw-sync --check
 
       - name: Type-check
         run: npm run type-check
@@ -49,7 +52,7 @@ jobs:
       # step is the internal-strict link gate. `gen:api` runs first (via the build script) so the
       # generated API pages are included.
       # The build also fails when a reference page's on-chain ids differ from the clients' deployments
-      # (scripts/check-onchain-ids.mjs) or when the built site contains an audit page.
+      # (mw-check-onchain-ids) or when the built site contains an audit page.
       - name: Build (internal-strict dead-link detection)
         run: npm run build
 
