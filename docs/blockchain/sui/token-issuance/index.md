@@ -34,9 +34,9 @@ are on [Fees](/blockchain/sui/fees). The review step shows the fee before you co
 
 | Choice | Options | Can it change later? |
 | --- | --- | --- |
-| Name, symbol, decimals, package and module name | free text within limits | **No.** They are fixed for good, whatever else you choose |
+| Symbol, decimals, package and module name | free text within limits | **No.** They are fixed for good, whatever else you choose |
 | **Supply** | **Mintable**: you keep the right to mint more. **Fixed**: the whole supply is created at the start and nobody can ever mint again | A fixed supply is final, even if you got the amount wrong. A mintable supply stays in the hands of whoever holds the mint capability |
-| **Metadata** | **Updatable**: you keep the right to change the description and icon. **Frozen**: they are locked for good | Frozen is final |
+| **Metadata** | **Updatable**: you keep the right to change the name, description and icon (the symbol and decimals never change). **Frozen**: all of them are locked for good | Frozen is final |
 | **Package code** | **Immutable** (recommended): the right to upgrade is destroyed and the code is sealed. **Upgradeable**: you keep the upgrade capability | Immutable is final |
 | **Recipient** | the address that receives the capabilities and the initial supply (your wallet if left blank) | No. Check it carefully |
 

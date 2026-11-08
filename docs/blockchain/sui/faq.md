@@ -151,7 +151,7 @@ Open the publish transaction shown on the page in a Sui explorer before doing an
 ### I cannot mint, or the details cannot be changed
 
 You can only mint if you chose a **mintable** supply and still hold the mint capability. Metadata is only changeable if you chose **updatable** metadata and hold the
-metadata capability. A **fixed** supply and **frozen** metadata are permanent. Name, symbol and decimals can never be changed. See the
+metadata capability. A **fixed** supply and **frozen** metadata are permanent. The symbol and decimals can never be changed; the name, description and icon can be changed by the metadata capability holder unless the metadata is frozen. See the
 [overview](/blockchain/sui/token-issuance/).
 
 ### I sent the capabilities to the wrong address

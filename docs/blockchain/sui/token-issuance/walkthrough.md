@@ -58,7 +58,7 @@ The first time you continue, a window **Before you deploy** lists the terms: eve
 not review or endorse any coin; you are responsible for your coin; on-chain transactions are irreversible; and Meddleware accepts no liability for
 loss or harm from your use of the tool. Choose **I understand - continue** to accept (the app remembers this in your browser).
 
-The **Review** card shows the permanent values (symbol, name, decimals, coin type), the initial supply, supply policy, metadata policy, package
+The **Review** card shows the permanent values (symbol, decimals, coin type, and the name too when you froze the metadata), the initial supply, supply policy, metadata policy, package
 code, licence and recipient. It also states the one-off fee and the treasury address that receives it. Choose **Confirm & deploy**.
 
 ### 5. Deploying and Done

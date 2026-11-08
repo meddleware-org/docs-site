@@ -2,6 +2,12 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.48] - 2026-11-08
+
+### Fixed
+
+- Token Issuance pages said the coin name is permanent. The symbol and decimals are; the name, description and icon can be changed by the metadata capability holder unless the metadata is frozen (the Sui coin registry allows it). The on-chain pages come from template 1.0.14.
+
 ## [0.0.47] - 2026-11-07
 
 ### Added

@@ -39,7 +39,7 @@ See [Fees](/blockchain/sui/fees) for how these are set and when they may change.
 | Capability | Lets its holder | If you choose... | Then... |
 | --- | --- | --- | --- |
 | TreasuryCap | mint new coins and burn coins | Supply: Fixed | it never exists; the registry holds the fixed supply |
-| MetadataCap | change the description and icon | Metadata: Frozen | it is deleted when the coin is created |
+| MetadataCap | change the name, description and icon | Metadata: Frozen | it is deleted when the coin is created |
 | UpgradeCap | replace the package code | Package code: Immutable | it is destroyed |
 
 The on-chain pages explain these in full: the [overview](/blockchain/sui/onchain/token-issuance/overview) and
