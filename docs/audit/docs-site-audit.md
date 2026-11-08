@@ -572,7 +572,7 @@ fails the image). The production build and both generators run from a clean chec
 - [x] no sensitive or operator-only content published; audience separation stated (end users here, developers on `dev.`)
 - [x] API/flag/env pages generated (SDK reference) or version-stamped (event retention, 2026-10-08)
 - [ ] registry credential inventory and rotation (F21) — `OPERATOR_TASKS.md` "Image registry credentials"
-- [ ] external review — maintainer item (`OPERATOR_TASKS.md` "Funding, grants and an external audit")
+- [ ] external review (ADR-0009 gate G4: not a launch gate; covered by redeploy and the audit pass) — maintainer item (`OPERATOR_TASKS.md` "Funding, grants and an external audit")
 
 ## Cross-project themes
 
