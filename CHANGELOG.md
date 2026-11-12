@@ -2,6 +2,25 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.49] - 2026-11-12
+
+### Changed
+
+- The company mark (the Kopimi "K") is in the navigation bar, and the site has the Meddleware icon set (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, `site.webmanifest`): all provided by `@meddleware/vitepress-theme` 0.0.5. The site's own `docs/public/favicon.svg` is removed, and the site loads no Inter font files.
+- The image's Content-Security-Policy no longer allows external images (`img-src 'self' data:`, from `mw-sync` with `@meddleware/frontend-config` 0.0.8); no page loads an external image, so nothing changes for readers.
+- The "For developers" links at the end of the Treasury and Token Issuance reference pages go to the new developer pages (Treasury data and the read indexer; the token template and the deploy flow), and the Walrus Storage, Sealed Storage and Access Gate links add the SDK overview of the developer site.
+- Takes `@meddleware/ui` ^0.1.42, `@meddleware/vitepress-theme` ^0.0.5 and `@meddleware/frontend-config` ^0.0.8.
+
+### Added
+
+- `tests/dist.test.mjs` checks the built site: the icon set and manifest are shipped and linked from every page (exactly one svg icon link), the mark is in the navigation bar, there is no font file or font preload, and no page or stylesheet loads anything from another origin. It is skipped when `dist/` is absent; CI runs it after the build with `REQUIRE_DIST=1`.
+- Tests for the "For developers" pointers (each reference page, and every link to the developer site resolving to a page there when the dev-site checkout is next to this repo).
+
+### Internal
+
+- The workflows set `DO_NOT_TRACK: "1"`.
+- The package-contents test allows 30 s for `npm pack`, which exceeded the default 5 s when the other test files ran alongside.
+
 ## [0.0.48] - 2026-11-08
 
 ### Fixed

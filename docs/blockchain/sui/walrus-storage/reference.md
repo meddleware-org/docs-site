@@ -65,6 +65,6 @@ More: [Questions and troubleshooting](/blockchain/sui/faq).
 ## For developers
 
 Uploading from your own code, the proof format the relay checks, and running your own relay are covered on the developer site:
-[Walrus Storage integration](https://meddleware.dev/sui/walrus-storage/integration) and
+[Walrus Storage SDK](https://meddleware.dev/sui/walrus-storage/), [integration](https://meddleware.dev/sui/walrus-storage/integration) and
 [Self-host a relay](https://meddleware.dev/sui/walrus-storage/relay-self-host). The generated [client API](./api/) lists every
 function.

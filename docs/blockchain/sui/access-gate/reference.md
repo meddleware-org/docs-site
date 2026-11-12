@@ -95,7 +95,7 @@ These come from the contract and are shown in plain words by the console and oth
 ## For developers
 
 Putting a service behind a gate, the proof a gateway verifies, the contract's functions and events, and the SDK are covered on the developer
-site: [Access Gate integration](https://meddleware.dev/sui/access-gate/integration),
+site: [Access Gate SDK](https://meddleware.dev/sui/access-gate/), [integration](https://meddleware.dev/sui/access-gate/integration),
 [Deploy a gateway](https://meddleware.dev/sui/access-gate/gateway) and the
 [on-chain API reference](https://meddleware.dev/sui/onchain/access-gate/api-reference). The generated [client API](./api/) and
 [gateway wire API](./wire-api/) list every function.

@@ -21,6 +21,10 @@ describe('Content-Security-Policy of the image', () => {
     expect(directive('connect-src')).toBe("connect-src 'self'")
   })
 
+  it('allows images from its own origin and data: only (the site loads no external image)', () => {
+    expect(directive('img-src')).toBe("img-src 'self' data:")
+  })
+
   it('keeps the other restrictive directives', () => {
     expect(directive('default-src')).toBe("default-src 'self'")
     expect(directive('object-src')).toBe("object-src 'none'")

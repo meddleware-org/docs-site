@@ -5,6 +5,7 @@ on:
       - "v*"
 
 env:
+  DO_NOT_TRACK: "1"
   IMAGE: docs-site
 
 # VitePress user-facing documentation site.

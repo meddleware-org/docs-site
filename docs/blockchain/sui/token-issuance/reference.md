@@ -69,5 +69,6 @@ More: [Questions and troubleshooting](/blockchain/sui/faq).
 ## For developers
 
 Generating the same coin from the command line, the template and the deployment flow are covered on the developer site:
-[Token template developer guide](https://meddleware.dev/sui/onchain/token-issuance/dev-guide) and
-[API reference](https://meddleware.dev/sui/onchain/token-issuance/api-reference).
+[Token Issuance for developers](https://meddleware.dev/sui/token-issuance/),
+[The deploy flow](https://meddleware.dev/sui/token-issuance/deploy) and
+[The token template](https://meddleware.dev/sui/token-issuance/template).

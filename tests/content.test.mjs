@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
@@ -47,6 +47,41 @@ describe('the hand-written pages', () => {
 
   it('has no page for other blockchains', () => {
     expect(all.map((p) => p.rel)).not.toContain('blockchain/index.md')
+  })
+})
+
+describe('the "For developers" pointers', () => {
+  const dev = (rel) => all.find((p) => p.rel === `blockchain/sui/${rel}`)?.text ?? ''
+  const developerSection = (rel) => dev(rel).split(/^## For developers$/m)[1]?.split(/^## /m)[0] ?? ''
+
+  it.each([
+    ['walrus-storage/reference.md', ['/sui/walrus-storage/', '/sui/walrus-storage/integration', '/sui/walrus-storage/relay-self-host']],
+    ['sealed-storage/reference.md', ['/sui/sealed-storage/', '/sui/sealed-storage/integration', '/sui/sealed-storage/policies']],
+    ['access-gate/reference.md', ['/sui/access-gate/', '/sui/access-gate/integration', '/sui/access-gate/gateway']],
+    ['treasury/reference.md', ['/sui/treasury/', '/sui/treasury/data', '/sui/indexer']],
+    ['token-issuance/reference.md', ['/sui/token-issuance/', '/sui/token-issuance/deploy', '/sui/token-issuance/template']],
+  ])('%s points to the developer site pages for its service', (rel, paths) => {
+    const section = developerSection(rel)
+    expect(section).not.toBe('')
+    for (const path of paths) expect(section).toContain(`(https://meddleware.dev${path})`)
+    // Treasury and Token Issuance have their own developer pages now (FU-0078): no detour through the on-chain or Access Gate pages.
+    if (/^(treasury|token-issuance)\//.test(rel)) {
+      expect(section).not.toContain('meddleware.dev/sui/onchain/')
+      expect(section).not.toContain('meddleware.dev/sui/access-gate/')
+    }
+  })
+
+  // When the developer site is checked out next to this repo (the workspace layout), every link to it must resolve to one of its pages.
+  const devDocs = join(import.meta.dirname, '..', '..', 'dev-site', 'docs')
+  it.skipIf(!existsSync(devDocs))('every link to the developer site names a page that exists there', () => {
+    const broken = all.flatMap((p) =>
+      [...p.text.matchAll(/\(https:\/\/meddleware\.dev(\/[^)#\s]*)/g)].flatMap((m) => {
+        const path = m[1].replace(/\/$/, '')
+        const candidates = [`${path}.md`, `${path}/index.md`, 'index.md'].map((c) => join(devDocs, path === '' ? 'index.md' : c))
+        return candidates.slice(0, path === '' ? 3 : 2).some((c) => existsSync(c)) ? [] : [`${p.rel}: ${m[1]}`]
+      }),
+    )
+    expect(broken).toEqual([])
   })
 })
 

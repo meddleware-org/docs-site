@@ -12,5 +12,5 @@ describe('npm package contents', () => {
     expect(files.filter((f) => f.startsWith('docs/audit'))).toEqual([])
     expect(files).toContain('docs/index.md')
     expect(files).toContain('scripts/gen-api.mjs')
-  })
+  }, 30_000) // `npm pack` walks the generated docs tree; it can exceed the default 5 s when the other test files run alongside
 })

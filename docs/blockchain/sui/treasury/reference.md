@@ -61,6 +61,6 @@ the recent window, not the platform's whole history. The console says from which
 
 ## For developers
 
-To read the same objects and events from code, see the
-[Access Gate integration guide](https://meddleware.dev/sui/access-gate/integration) and the
-[on-chain API reference](https://meddleware.dev/sui/onchain/access-gate/api-reference) on the developer site.
+To read the same objects and events from code, see [Treasury data](https://meddleware.dev/sui/treasury/data) (the objects, events and
+JSON shapes) and [Treasury for developers](https://meddleware.dev/sui/treasury/) on the developer site. Event history is read from a Sui
+node, or from the optional [read indexer](https://meddleware.dev/sui/indexer) when one is configured.

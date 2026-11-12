@@ -21,6 +21,10 @@ size, forced colours, keyboard) over the pages in `e2e/pages.ts` (add a new kind
 - **On-brand via design tokens.** The theme is `@meddleware/vitepress-theme` (`.vitepress/theme/index.ts` re-exports it): every
   `--vp-*` colour is a token role, so the colour mode, the seasons and the 7:1 contrast follow the apps (**no gold/purple**). The site
   has no stylesheet of its own: to change how it looks, change the theme package (or the tokens), never add hex here.
+  The theme also provides the brand: the company mark in the nav bar, the favicon set and `site.webmanifest` (so the site keeps **no**
+  `docs/public/favicon.*` and no icon `<link>` in `config.ts`) and no web fonts (system stacks only). `tests/dist.test.mjs` checks all of it,
+  and that no page loads anything from another origin, on the built `dist/` (skipped when `dist/` is absent; CI sets `REQUIRE_DIST=1`).
+  The image's CSP allows no external images (`img-src 'self' data:`, written by `mw-sync`): use no remote image in a page.
 - **Output is pinned to `dist/`.** `outDir` in `.vitepress/config.ts` resolves to the repo-root
   `dist/` so the Dockerfile's `COPY --from=build /app/dist` (shared static-server pattern) works
   unchanged. Do not rely on VitePress's default `.vitepress/dist`.
@@ -59,6 +63,7 @@ change"; update them when the model is re-priced.
 | --- | --- |
 | `docs/.vitepress/config.ts` | Nav, sidebar, local search, `outDir`, dark-first appearance. |
 | `docs/.vitepress/theme/` | `export { default } from '@meddleware/vitepress-theme'` (the design-token theme, footer and landmark fixes). |
+| `tests/` | `content.test.mjs` (pages, wording, sidebar, "For developers" pointers), `csp.test.mjs`, `dist.test.mjs` (built site), `network-notice.test.ts`, `onchain-ids.test.mjs`, `package-contents.test.mjs`. |
 | `scripts/gen-api.mjs` | TypeDoc → Markdown SDK reference per service (resilient). The other build scripts are bins of `@meddleware/vitepress-theme` and `@meddleware/frontend-config`. |
 | `docs/.vitepress/theme/NetworkNotice.vue`, `network.ts` | The one sentence about where the tools run, from `network.json`. |
 | `docs/<service>/` | Per-service `index.md` (overview), `using.md`, `reference.md`, etc. |

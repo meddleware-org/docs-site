@@ -79,5 +79,5 @@ The contract's own documentation is imported from its package: the [on-chain ove
 ## For developers
 
 Using Sealed Storage from your own code, the manifest format, and writing policies are covered on the developer site:
-[Sealed Storage integration](https://meddleware.dev/sui/sealed-storage/integration) and
+[Sealed Storage SDK](https://meddleware.dev/sui/sealed-storage/), [integration](https://meddleware.dev/sui/sealed-storage/integration) and
 [Writing policies](https://meddleware.dev/sui/sealed-storage/policies). The generated [client API](./api/) lists every function.

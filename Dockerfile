@@ -9,8 +9,8 @@
 # Chromium under this policy with zero violations). script-src stays 'self' plus the sha256 hashes of VitePress's two inline bootstrap scripts (checked at build time by mw-check-csp-inline); connect-src is 'self' only: this
 # static site's local search and footer load same-origin files and nothing connects elsewhere (headless
 # Chromium probe, 2026-10-22: search returns results and the footer renders with zero violations; the site
-# has no RPC, relay, aggregator or key-server client); img-src allows https:/data:/blob: for images and local previews.
-ARG CSP="default-src 'self'; script-src 'self' 'sha256-2xX7WPApihAEgY57fPwQ4HRaWtCTrsAryoGVYhwtsA0=' 'sha256-ng8W1FnGVqbzCCV1hV2EGXSMN/WlYnkoQZy8x1kkcsM='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
+# has no RPC, relay, aggregator or key-server client); img-src allows only same-origin and data: images (the site loads no external image).
+ARG CSP="default-src 'self'; script-src 'self' 'sha256-2xX7WPApihAEgY57fPwQ4HRaWtCTrsAryoGVYhwtsA0=' 'sha256-ng8W1FnGVqbzCCV1hV2EGXSMN/WlYnkoQZy8x1kkcsM='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests"
 
 FROM node:26-slim@sha256:e4db4c914bf8ad241bd24804fc25d272d89bad97e68cdc8a1414862790a02c39 AS build
 
