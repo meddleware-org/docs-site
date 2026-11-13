@@ -2,6 +2,10 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [0.0.50] - 2026-11-13
+
+The Walrus pages state both epoch lengths (14 days on mainnet, one day on testnet); @meddleware/ui 0.1.43, frontend-config 0.0.10.
+
 ## [0.0.49] - 2026-11-12
 
 ### Changed
