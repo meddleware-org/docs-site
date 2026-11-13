@@ -14,7 +14,7 @@ describes testnet; [Getting started](/blockchain/sui/getting-started#where-the-t
 | Limit | Value |
 | --- | --- |
 | Storage per upload or extension | 1 to 53 epochs |
-| Length of an epoch | about two weeks on mainnet; set by the Walrus network |
+| Length of an epoch | 14 days on mainnet, one day on testnet; set by the Walrus network (`walrus info epoch`, read 2026-11-13) |
 | Longest a blob can be reserved ahead | 53 epochs from now, so a blob cannot be extended past that point until some epochs have passed |
 | Largest file through Meddleware's relay | 100 MiB (current default) |
 | Relay fee ceiling the app will pay | 0.005 SUI per upload |

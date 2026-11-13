@@ -30,7 +30,7 @@ It is not a free, permanent drive. Storage is paid for and **time-limited**, and
 ## Blobs expire
 
 ::: warning Walrus storage is time-limited
-A blob is stored for a number of **epochs**, Walrus's unit of time. On mainnet an epoch is about two weeks. When the paid period
+A blob is stored for a number of **epochs**, Walrus's unit of time. On mainnet an epoch is two weeks (14 days); on testnet it is one day. When the paid period
 ends the network may delete the blob. To keep a file, **extend it before it expires**: the **My Blobs** tab does this, and flags a
 blob as **Expiring soon**.
 :::
