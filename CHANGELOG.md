@@ -2,6 +2,12 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [Unreleased]
+
+- Shared packages for the storage rule (D134): nothing is stored before the visitor acts (`@meddleware/ui` remembers the colour
+  mode only when asked, `wallet-adapter` keeps a chosen network for the tab only, the docs theme stores no colour mode, expired upload
+  records are swept); `e2e/storage.spec.ts` checks it on every build.
+
 ## [0.0.50] - 2026-11-13
 
 The Walrus pages state both epoch lengths (14 days on mainnet, one day on testnet); @meddleware/ui 0.1.43, frontend-config 0.0.10.
