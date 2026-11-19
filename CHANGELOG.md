@@ -2,6 +2,11 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [Unreleased]
+
+- **Security:** the image is built on static-server 0.1.13 (Go 1.26.11), which fixes CVE-2026-97054 (HIGH, `net/http`) found in
+  the 0.1.12 server by the release scan.
+
 ## [0.0.51] - 2026-11-19
 
 - Shared packages for the storage rule (D134): nothing is stored before the visitor acts (`@meddleware/ui` remembers the colour
