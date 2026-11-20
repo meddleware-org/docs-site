@@ -83,3 +83,7 @@ Tunnel public hostname. See the platform repo's `docs/images/IMAGES.md` and
 - Do not add developer integration or white-label how-to here (that's `meddleware.dev`).
 - Do not split into multiple docs subdomains.
 - Do not hardcode brand colours or the build output path.
+
+## Interoperability
+
+- [INTEROP.md](INTEROP.md): the standards this project speaks, what is planned, where to extend it, and what proves each claim.
