@@ -1,48 +1,47 @@
 ---
 layout: home
-title: Meddleware documentation
-description: Guides for using the Meddleware tools on Sui with your own wallet - store files on Walrus, encrypt them, sell access passes, issue a coin and read the treasury.
+title: Meddleware guides
+description: How to use Meddleware's tools, what they cost, and what we can and cannot see.
 
 hero:
   name: Meddleware
-  text: Guides for the Meddleware tools
-  tagline: Store files, keep them private, sell access passes, issue a coin and read the treasury, all with your own Sui wallet. No account to create.
+  text: How to use Meddleware
+  tagline: Open tools you can use, take everything when you leave, and run yourself. Each guide says what the tool needs and what it costs.
   actions:
     - theme: brand
-      text: Get started
-      link: /blockchain/sui/getting-started
+      text: Start here
+      link: /start/
     - theme: alt
-      text: What it costs
-      link: /blockchain/sui/fees
+      text: How we treat your data
+      link: /start/your-data
 
 features:
-  - title: Walrus Storage
-    details: Upload a file to Walrus, get a blob ID back and keep the file alive by extending its storage before it expires.
-    link: /blockchain/sui/walrus-storage/
-    linkText: Read the guide
-  - title: Sealed Storage
-    details: Encrypt a file in your browser and decide on-chain who may open it, such as the holders of a pass or anyone after a set time.
-    link: /blockchain/sui/sealed-storage/
-    linkText: Read the guide
-  - title: Access Gate
-    details: Create and sell passes that prove someone may use your content or service. Ownership is checked on-chain.
-    link: /blockchain/sui/access-gate/
-    linkText: Read the guide
-  - title: Token Issuance
-    details: Deploy your own Sui coin from your browser and choose what stays changeable and what is locked for good.
-    link: /blockchain/sui/token-issuance/
-    linkText: Read the guide
-  - title: Treasury
-    details: See the platform's treasury balance, its commission rate and the passes being sold and used. No wallet needed.
-    link: /blockchain/sui/treasury/
-    linkText: Read the guide
-  - title: Fees and security
-    details: Every fee you can pay, who receives it, and what Meddleware can and cannot see or do with your files and keys.
-    link: /blockchain/sui/fees
-    linkText: See the fees
+  - title: What Meddleware is
+    details: The purpose, the four promises every tool makes, and why some tools use a blockchain.
+    link: /start/
+    linkText: Read it
+  - title: How we treat your data
+    details: What we see and keep, what your browser stores (nothing until you ask), and what is public.
+    link: /start/your-data
+    linkText: Read it
+  - title: Leaving with your data
+    details: What you can take from each tool, and how to use it without us.
+    link: /start/leaving
+    linkText: Read it
 ---
 
 <NetworkNotice />
 
-New here? Start with [Getting started](/blockchain/sui/getting-started), then pick a tool above. If something goes wrong,
-[Questions and troubleshooting](/blockchain/sui/faq) lists the messages you may see and what to do about each.
+## Available now
+
+The first tools. Each guide says what the tool runs on.
+
+| Tool | What it does | Runs on |
+| --- | --- | --- |
+| [Walrus Storage](/blockchain/sui/walrus-storage/) | Store files where no single company can delete them, and see how long each one is kept. | Walrus and Sui |
+| [Sealed Storage](/blockchain/sui/sealed-storage/) | Encrypt files in your browser; only people with the right pass, or after a time you set, can open them. | Sui |
+| [Access Gate](/blockchain/sui/access-gate/) | Sell passes to your files, pages or apps, with no account to set up. | Sui |
+| [Token Issuance](/blockchain/sui/token-issuance/) | Create a coin from your browser in about a minute; we never hold your keys. | Sui |
+
+New to the tools? Start with [Getting started](/blockchain/sui/getting-started) and [What it costs](/blockchain/sui/fees). If something goes
+wrong, [Questions and troubleshooting](/blockchain/sui/faq) lists the messages you may see and what to do about each.

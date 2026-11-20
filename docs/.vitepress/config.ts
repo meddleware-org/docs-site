@@ -18,6 +18,7 @@ const onchainSidebar: DefaultTheme.SidebarItem[] = existsSync(onchainSidebarFile
 const S = '/blockchain/sui'
 
 const nav: DefaultTheme.NavItem[] = [
+  { text: 'Start here', link: '/start/' },
   { text: 'Get started', link: `${S}/getting-started` },
   {
     text: 'Tools',
@@ -37,9 +38,20 @@ const nav: DefaultTheme.NavItem[] = [
 ]
 
 const sidebar: DefaultTheme.Sidebar = {
-  [`${S}/`]: [
+  // The platform, whatever tools it holds (copy review 2, approved 2026-11-20).
+  '/start/': [
     {
       text: 'Start here',
+      items: [
+        { text: 'What Meddleware is', link: '/start/' },
+        { text: 'How we treat your data', link: '/start/your-data' },
+        { text: 'Leaving with your data', link: '/start/leaving' },
+      ],
+    },
+  ],
+  [`${S}/`]: [
+    {
+      text: 'Using the tools',
       items: [
         { text: 'Overview', link: `${S}/` },
         { text: 'Getting started', link: `${S}/getting-started` },
@@ -116,9 +128,9 @@ const sidebar: DefaultTheme.Sidebar = {
 // directory and the repo-root `dist/` the output (the Dockerfile copies it into the static server).
 export default baseConfig({
   configUrl: import.meta.url,
-  title: 'Meddleware Docs',
-  description:
-    'How to use the Meddleware tools on Sui: store files on Walrus, encrypt them, sell access passes, issue a coin and read the treasury, with your own wallet.',
+  title: 'Meddleware guides',
+  description: "How to use Meddleware's tools, what they cost, and what we can and cannot see.",
+  footerLinks: [{ text: 'Treasury', link: 'https://treasury.meddleware.co.uk' }],
   nav,
   sidebar,
   extra: {

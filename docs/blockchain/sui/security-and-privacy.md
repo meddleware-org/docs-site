@@ -94,8 +94,9 @@ networks can be reset and their tokens have no value, so do not rely on anything
 - Your browser talks **directly** to services outside Meddleware as you use the tools, and those services can see your IP address and requests under their own
   policies: Sui network nodes, Walrus storage nodes, aggregators and relays, Seal key servers and your wallet. Token Issuance also fetches the list of
   open-source licences from GitHub's file hosting, and GitHub only if you choose to create a repository.
-- The apps keep a few things in your **browser's own storage** on your device, such as your colour mode, that you accepted the token terms, and what is needed to
-  finish an interrupted Walrus upload. They are not sent to Meddleware.
+- The apps keep a few things in your **browser's own storage**, and only once you do something that needs them: your colour mode if you tick
+  "Remember on this device", the network you chose (until you close the tab), that you accepted the token terms, and what is needed to finish an
+  interrupted upload or payment. They are not sent to Meddleware.
 - Your wallet extension is a separate program with its own privacy terms.
 
 ## Legal notices
