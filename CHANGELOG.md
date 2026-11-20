@@ -2,7 +2,7 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
-## [Unreleased]
+## [0.0.54] - 2026-11-20
 
 - The guides follow the apps' labels (copy standard, 2026-11-20): Access Gate's pass fields and options, Sealed Storage's "Your pass ID", Treasury's "Platform fee rate", "Gates", "Passes sold" and "Passes used" (the guide named counters the app no longer showed), and the network fee instead of gas.
 
