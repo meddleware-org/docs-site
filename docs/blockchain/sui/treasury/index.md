@@ -35,8 +35,7 @@ To create or manage a gate, use [Access Gate](/blockchain/sui/access-gate/).
 
 ### Overview
 
-The treasury balance, the commission rate and the treasury address, then counters for **Active gates**, **Accesses minted** (passes sold or
-given away) and **Accesses consumed** (passes used), and the most recent activity.
+The treasury balance, the commission rate and the treasury address, then counters for **Gates**, **Passes sold** (including passes given away) and **Passes used**, and the most recent activity.
 
 ### Accounts
 

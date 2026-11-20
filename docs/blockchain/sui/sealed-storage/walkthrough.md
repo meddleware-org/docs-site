@@ -88,7 +88,7 @@ If a gate owner published a discovery pointer, you can find their content from t
 1. **Gate.** Enter the **Access gate ID** (or pick it from your own gates). By default only pointers published by the gate's own owner are
    listed; tick "Also list content published by other addresses (unverified: anyone can publish to a gate)" to see others. Choose
    **Find sealed content**.
-2. **Unlock.** Enter **Your pass NFT ID**, tick **Pass is soulbound** if it is, and choose **Unlock & download** next to the item you want.
+2. **Unlock.** Enter **Your pass ID**, tick **Pass is soulbound** if it is, and choose **Unlock & download** next to the item you want.
    You will be asked for the same signature.
 
 Items from other publishers are marked "Published by (address): decrypting proves it was sealed to this gate, not who wrote it." If nothing

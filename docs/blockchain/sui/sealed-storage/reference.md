@@ -72,7 +72,7 @@ The contract's own documentation is imported from its package: the [on-chain ove
 | Paste or upload a valid manifest. | The Manifest step needs a manifest before **Decrypt**. |
 | Requesting decryption keys - approve the signature in your wallet... | Approve the signature in your wallet. |
 | User does not have access to one or more of the requested keys | The key servers refused: the policy said no. See [Questions and troubleshooting](/blockchain/sui/faq#cant-decrypt). |
-| Enter a gate id to search. / Enter your pass NFT id. | Fill in the field in the **Unlock** tab. |
+| Enter a gate id to search. / Enter your pass ID. | Fill in the field in the **Unlock** tab. |
 | No sealed content published for this gate. | The gate owner has not published a discovery pointer. Ask them for the manifest. |
 | This content is already sealed to the current key servers; nothing to do. | Re-seal is not needed. |
 

@@ -64,7 +64,7 @@ approval, or wait so long that the reserved storage lapses.
 Both of these notices mean you have already paid and nothing is charged twice:
 
 - **"Your blob is registered and paid for, but the upload to the relay did not complete."** Choose **Retry upload**.
-- **"Your blob was uploaded and paid for but not yet certified."** Choose **Certify blob**. This is one wallet approval and gas only.
+- **"Your blob was uploaded and paid for but not yet certified."** Choose **Certify blob**. This is one wallet approval and the network fee only.
 
 If you leave the page, the blob appears in **My Blobs** as **Uploaded, not certified**, with a **Certify** button, as long as you use the same browser.
 

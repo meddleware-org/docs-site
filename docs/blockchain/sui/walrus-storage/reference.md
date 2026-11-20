@@ -25,7 +25,7 @@ describes testnet; [Getting started](/blockchain/sui/getting-started#where-the-t
 | Label | Meaning |
 | --- | --- |
 | **Certified** | The storage nodes confirmed the file and the blob is fully stored. |
-| **Uploaded, not certified** | The file was sent but the last step (certification) is outstanding. Choose **Certify**: gas only, no new upload. |
+| **Uploaded, not certified** | The file was sent but the last step (certification) is outstanding. Choose **Certify**: network fee only, no new upload. |
 | **Not certified** | Registered on-chain but not certified, and this browser holds nothing saved to finish it with. |
 | **Expiring soon** | Few epochs remain. Extend it. |
 | **expired** | The storage period has ended. The network may already have deleted the file. |

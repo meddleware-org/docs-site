@@ -88,7 +88,7 @@ These come from the contract and are shown in plain words by the console and oth
 | Access Gate is not available on (network). Switch to a network where it is. | The tool is not deployed on that network. |
 | Free gates are disabled on this deployment. | Choose a paid price. |
 | The minimum price for a paid gate is (amount) SUI. | Enter at least that. |
-| The image URL must use https (or be a data:image URI). | Fix the NFT image URL. |
+| The image URL must use https (or be a data:image URI). | Fix the pass image URL. |
 | Creating gates is unavailable here right now | A site problem you cannot fix. Try again later; see the [status page](/blockchain/sui/status-and-roadmap). |
 | You don't administer any gates yet. Create one in the "Create gate" tab. | Your wallet holds no admin capability. Create a gate, or connect the wallet that does. |
 

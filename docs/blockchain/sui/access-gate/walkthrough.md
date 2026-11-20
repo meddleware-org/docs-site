@@ -25,10 +25,10 @@ The form has three steps.
      gate exists, though you can change N later.
    - **Payment recipient.** Where the sale proceeds go, after the platform's commission. It starts as your own address.
 2. **Appearance** (what wallets show for each pass)
-   - **NFT name**, **NFT image URL** (an `https://` address, or a small `data:image` link; 2,048 characters at most) and **NFT description**.
+   - **Pass name**, **Pass image URL** (an `https://` address, or a small `data:image` link; 2,048 characters at most) and **Pass description**.
 3. **Options**
-   - **Soulbound (non-transferable NFTs).** Fixed once the gate exists.
-   - **Auto-burn NFTs at zero credits.** A spent single-use pass is deleted instead of kept as a receipt.
+   - **Soulbound (passes cannot be transferred).** Fixed once the gate exists.
+   - **Remove a pass when its credits reach zero.** A spent single-use pass is deleted instead of kept as a receipt.
    - If the console applies any **Permanent rules on this deployment**, they are listed here before you confirm. They are recorded on the
      gate for good and anyone can read them. See [the reference](/blockchain/sui/access-gate/reference#permanent-rules-of-a-gate).
 
@@ -43,8 +43,8 @@ payout address, so keep it in a wallet you control.**
 explorer) and badges for its state: the price (or **Free**), **Unlimited** or "(N) credits", **Soulbound**, **Paused**, **Frozen** and any
 permanent rules such as "Pause blocks unlocks". Open **Manage** on a card for:
 
-- **Settings.** Edit and **Update** one setting at a time: price, payment recipient, default credits (single-use gates only), NFT name, NFT image
-  URL, NFT description. Setting the price to `0` makes the gate free and pays the one-off free-gate fee the first time.
+- **Settings.** Edit and **Update** one setting at a time: price, payment recipient, default credits (single-use gates only), pass name, pass image
+  URL, pass description. Setting the price to `0` makes the gate free and pays the one-off free-gate fee the first time.
 - **Pause purchases / Unpause purchases.** Stops or restarts sales.
 - **Auto-burn spent NFTs / Keep spent NFTs as receipts.** Changes what happens to a pass at zero uses. It applies to passes already
   sold, too.

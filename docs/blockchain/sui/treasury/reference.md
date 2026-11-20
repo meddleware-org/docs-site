@@ -25,7 +25,7 @@ The `PlatformConfig` object holds the settings the whole platform shares. Curren
 | Setting | Meaning | Current default |
 | --- | --- | --- |
 | Treasury | the address that receives the commission | shown on the Overview and Accounts tabs |
-| Commission rate | share of a sale's price paid to the treasury, in basis points (100 bps = 1%) | 20 bps (0.2%) |
+| Platform fee rate (called commission in the contract) | share of a sale's price paid to the treasury, in basis points (100 bps = 1%) | 20 bps (0.2%) |
 | Minimum commission | floor on the commission of a paid sale | 0.0005 SUI |
 | Free-gate fee | one-off fee for a gate with price 0 | 1 SUI |
 
@@ -37,17 +37,17 @@ The console shows the rate as a percentage. The minimum price of a paid pass, 0.
 | Figure | Where | Meaning |
 | --- | --- | --- |
 | SUI balance / Current balance | Overview, Accounts | all SUI held by the treasury address: coin objects plus its address balance |
-| Commission rate | Overview, Accounts | the rate above, as a percentage and in basis points (bps) |
-| Active gates | Overview | gates whose admin capability the treasury owns, counted from live state |
-| Accesses minted | Overview | passes sold or given away that the event list reaches |
-| Accesses consumed | Overview | passes used (single-use passes spent) that the event list reaches |
-| Gate name, Price, Object ID | Accounts, Revenue Sources | the gate's NFT name, its price in SUI (or Free) and its on-chain ID |
+| Platform fee rate | Overview, Accounts | the rate above, as a percentage and in basis points (bps) |
+| Gates | Overview | gates whose admin capability the treasury owns, counted from live state |
+| Passes sold | Overview | passes sold or given away that the event list reaches |
+| Passes used | Overview | passes used (single-use passes spent) that the event list reaches |
+| Gate name, Price, Object ID | Accounts, Revenue Sources | the gate's pass name, its price in SUI (or Free) and its on-chain ID |
 | Access Sold / Access Used | Activity | a pass was bought or given away / a use of a pass was spent |
 | Address | Activity | the buyer of a sold pass, or the holder who used one |
 | Block | Activity | the Sui checkpoint number, which is like a block height: higher is newer |
 | Transaction | Activity | the identifier of the transaction that emitted the event |
 
-Counts and the activity list come from events that Sui nodes keep only for a short time, so "Accesses minted" and "Accesses consumed" cover
+Counts and the activity list come from events that Sui nodes keep only for a short time, so "Passes sold" and "Passes used" cover
 the recent window, not the platform's whole history. The console says from which checkpoint it has data.
 
 ## Messages you may see

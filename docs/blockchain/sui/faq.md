@@ -162,7 +162,7 @@ They cannot be recovered. The recipient address is permanent; check it before yo
 
 ### The counts are lower than I expect
 
-"Accesses minted" and "Accesses consumed" come from events, which Sui nodes keep for only a few days. They cover a recent window, not all history. The
+"Passes sold" and "Passes used" come from events, which Sui nodes keep for only a few days. They cover a recent window, not all history. The
 **gates** and **balance** figures are read from live state. See the [Treasury reference](/blockchain/sui/treasury/reference).
 
 ## General
