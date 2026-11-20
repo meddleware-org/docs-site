@@ -2,7 +2,7 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
-## [Unreleased]
+## [0.0.53] - 2026-11-20
 
 - **Meddleware guides** (copy review 2, approved 2026-11-20): a purpose-led home page; "Start here" (what Meddleware is, how we treat
   your data, leaving with your data); the tools listed as "Available now", each naming what it runs on; the treasury in the footer
