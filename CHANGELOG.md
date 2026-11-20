@@ -4,6 +4,9 @@ All notable changes to `@meddleware/docs` are documented here.
 
 ## [Unreleased]
 
+- **Meddleware guides** (copy review 2, approved 2026-11-20): a purpose-led home page; "Start here" (what Meddleware is, how we treat
+  your data, leaving with your data); the tools listed as "Available now", each naming what it runs on; the treasury in the footer
+  (vitepress-theme 0.0.7 `footerLinks`). Security and privacy: browser storage described as it is since D134.
 - CI: `HOME=/root` is set on the browser-test command only, not the whole job, so the runner no longer warns that it cannot read
   `/root/.docker/config.json`.
 - `overrides.chrome-launcher: ^1.2.3`: Lighthouse CI (`@lhci/cli` 0.16.1, the newest) still asks for chrome-launcher 0.13, which pulls
