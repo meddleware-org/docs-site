@@ -40,7 +40,7 @@ Files synced from `@meddleware/frontend-config` (dependabot, postcss, stylelint,
 - **Nothing stored before an action.** A page sets no cookie and writes nothing to the browser's storage until the visitor asks for something that needs it; the storage test (`e2e/storage.spec.ts`) enforces it.
 - **No echo.** A message, log line or error never repeats a configured or caller-supplied URL, token, key or password. Name the key or the position instead.
 - **No secrets, no personal data** in code, tests, fixtures, comments or commit messages. Examples and tests use `.example` hosts and fixed test keys.
-- **Open standards.** Where a standard exists and fits, use it; the standards inventory in the audit (`docs/audit/docs-site-audit.md`) and `docs/INTEROP.md` list the ones this project speaks.
+- **Open standards.** Where a standard exists and fits, use it; the standards inventory in the audit (`docs/audit/docs-site-audit.md`) and `INTEROP.md` list the ones this project speaks.
 - **Pages are plain words.** A page follows the workspace's copy standard (short sentences, one idea per section, no developer or maintainer wording); `tests/content.test.mjs` bans the words that give it away. The home page and getting started are the only pages that say where the tools run, through `<NetworkNotice />`.
 - **Generated trees are not edited.** `docs/**/api/`, `docs/**/wire-api/` and `docs/blockchain/sui/onchain/` are built by `npm run gen:api` and `npm run gen:onchain`; change the SDK or the Move package that they come from.
 
