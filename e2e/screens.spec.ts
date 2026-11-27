@@ -3,4 +3,5 @@ import { defineShots } from '@meddleware/frontend-config/shots'
 import { PAGES } from './pages.js'
 import { page_ } from './open.js'
 
+// One screenshot per page.
 defineShots(Object.fromEntries(Object.entries(PAGES).map(([name, path]) => [name, page_(path)])))

@@ -60,3 +60,7 @@ BSD Zero Clause License (`0BSD`). See [LICENSE](LICENSE).
 ## Open standards
 
 What this project speaks, what is planned and where you can extend it: [INTEROP.md](INTEROP.md).
+
+## Contributing
+
+How to run the checks and propose a change: [CONTRIBUTING.md](CONTRIBUTING.md).

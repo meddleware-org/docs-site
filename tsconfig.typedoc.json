@@ -1,17 +1,22 @@
+// Used only by scripts/gen-api.mjs (TypeDoc), which builds the generated API reference. It is not a project configuration for `tsc`.
 {
   "compilerOptions": {
+    // Modern output and bundler-style resolution, as the SDKs are written.
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    // Not strict: the point is to read the SDKs' documentation, not to check them (`--skipErrorChecking` is also passed).
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
+    // The SDKs import their own `.ts` files.
     "allowImportingTsExtensions": true,
+    // Nothing is emitted.
     "noEmit": true,
     "types": []
   },
-  "//": "Used only by scripts/gen-api.mjs (TypeDoc). Includes the installed SDK sources so the TS program has inputs; TypeDoc's entryPoints then select what is documented.",
+  // Includes the installed SDK sources so the TS program has inputs; TypeDoc's entryPoints then select what is documented.
   "include": [
     "node_modules/@meddleware/sealed-storage-client/src",
     "node_modules/@meddleware/walrus-storage-client/src",

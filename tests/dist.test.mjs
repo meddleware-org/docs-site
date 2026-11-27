@@ -1,3 +1,4 @@
+// Tests of the built site (dist/): the icon set and manifest, one svg icon link per page, the mark in every navigation bar, no font files and nothing loaded from another origin. They need a build (CI sets REQUIRE_DIST=1).
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import { describe, expect, it } from 'vitest'
@@ -7,6 +8,7 @@ import { describe, expect, it } from 'vitest'
 // if dist/ is missing; locally it is skipped when dist/ is absent.
 const dist = join(import.meta.dirname, '..', 'dist')
 
+/** Every file under `dir`, recursively. */
 function files(dir = dist, out = []) {
   for (const name of readdirSync(dir)) {
     const p = join(dir, name)
@@ -17,6 +19,7 @@ function files(dir = dist, out = []) {
 }
 
 describe.skipIf(!existsSync(dist) && !process.env.REQUIRE_DIST)('the built site', () => {
+  // Exists when it is required.
   it('exists when it is required', () => {
     expect(existsSync(dist)).toBe(true)
   })
@@ -32,6 +35,7 @@ describe.skipIf(!existsSync(dist) && !process.env.REQUIRE_DIST)('the built site'
     },
   )
 
+  // Has a manifest that names the site and lists the icons it ships.
   it('has a manifest that names the site and lists the icons it ships', () => {
     const manifest = JSON.parse(readFileSync(join(dist, 'site.webmanifest'), 'utf8'))
     expect(manifest.name).toMatch(/Meddleware/)
@@ -40,6 +44,7 @@ describe.skipIf(!existsSync(dist) && !process.env.REQUIRE_DIST)('the built site'
     for (const src of sources) expect(existsSync(join(dist, src))).toBe(true)
   })
 
+  // Links the icon set from every page, with exactly one svg icon link.
   it('links the icon set from every page, with exactly one svg icon link', () => {
     expect(pages.length).toBeGreaterThan(20)
     const bad = pages.flatMap((p) => {
@@ -61,6 +66,7 @@ describe.skipIf(!existsSync(dist) && !process.env.REQUIRE_DIST)('the built site'
     expect(bad).toEqual([])
   })
 
+  // Ships no font file and preloads none.
   it('ships no font file and preloads none', () => {
     expect(all.map(rel).filter((p) => /\.(woff2?|ttf|otf|eot)$/i.test(p))).toEqual([])
     const preloaded = pages.filter((p) => /<link[^>]*rel="preload"[^>]*as="font"/.test(readFileSync(p, 'utf8'))).map(rel)
@@ -69,6 +75,7 @@ describe.skipIf(!existsSync(dist) && !process.env.REQUIRE_DIST)('the built site'
     expect(faces).toEqual([])
   })
 
+  // Loads nothing from another origin: no external script, stylesheet, image, font or css url().
   it('loads nothing from another origin: no external script, stylesheet, image, font or css url()', () => {
     const external = /^(https?:)?\/\//
     const hits = []

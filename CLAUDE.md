@@ -87,3 +87,11 @@ Tunnel public hostname. See the platform repo's `docs/images/IMAGES.md` and
 ## Interoperability
 
 - [INTEROP.md](INTEROP.md): the standards this project speaks, what is planned, where to extend it, and what proves each claim.
+
+## Documentation rules (workspace documentation standard, D144)
+
+Every file has a header and every declaration a doc comment (TSDoc in TypeScript; props and emits of a component are documented too). Comments say why.
+In a Vue single-file component the header is a `//` comment just inside `<script>` (never an HTML comment before the root element in `<template>`), template notes are
+`<!-- -->` inside the root, and style notes are `/* */`. Comments in `<script>` and `<style>` are stripped from the build; comments in `index.html` ship, so keep that file's to one line.
+`node scripts/check-docs.mjs --report docs-site` (in the workspace repository) is the gate. See [CONTRIBUTING.md](CONTRIBUTING.md).
+

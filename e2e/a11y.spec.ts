@@ -4,4 +4,5 @@ import { defineA11ySuite } from '@meddleware/frontend-config/a11y'
 import { PAGES } from './pages.js'
 import { page_ } from './open.js'
 
+// One state per page.
 defineA11ySuite(Object.fromEntries(Object.entries(PAGES).map(([name, path]) => [name, page_(path)])), { aaa: 'gate' })

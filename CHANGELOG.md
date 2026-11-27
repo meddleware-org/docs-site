@@ -2,6 +2,10 @@
 
 All notable changes to `@meddleware/docs` are documented here.
 
+## [Unreleased]
+
+- Documentation pass (workspace documentation standard): every code file has a header and line-level comments, every declaration a doc comment; `CONTRIBUTING.md` and `AGENTS.md` are new. The files synced from `@meddleware/frontend-config` now carry that package's commented templates (`npx mw-sync --write`). The npm-publish workflow's "not configured" warning had a garbled word and now reads "npm publishing is not configured". The built site is identical to the previous commit's.
+
 ## [0.0.54] - 2026-11-20
 
 - The guides follow the apps' labels (copy standard, 2026-11-20): Access Gate's pass fields and options, Sealed Storage's "Your pass ID", Treasury's "Platform fee rate", "Gates", "Passes sold" and "Passes used" (the guide named counters the app no longer showed), and the network fee instead of gas.

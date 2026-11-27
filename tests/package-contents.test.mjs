@@ -1,8 +1,10 @@
+// Test of the npm package contents: the site source and scripts are in the tarball, the audit tree is not.
 import { execFileSync } from 'node:child_process'
 import { join } from 'node:path'
 import { describe, expect, it } from 'vitest'
 
 describe('npm package contents', () => {
+  // Does not include the audit tree, but does include the site source and scripts.
   it('does not include the audit tree, but does include the site source and scripts', () => {
     const out = execFileSync('npm', ['pack', '--dry-run', '--json', '--ignore-scripts'], { encoding: 'utf8', cwd: join(import.meta.dirname, '..') })
     // `npm pack --json` prints an array in CI's npm, and an object keyed by the package name in newer ones: read both.
