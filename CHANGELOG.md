@@ -4,6 +4,8 @@ All notable changes to `@meddleware/docs` are documented here.
 
 ## [Unreleased]
 
+## [0.0.55] - 2026-11-27
+
 - Documentation pass (workspace documentation standard): every code file has a header and line-level comments, every declaration a doc comment; `CONTRIBUTING.md` and `AGENTS.md` are new. The files synced from `@meddleware/frontend-config` now carry that package's commented templates (`npx mw-sync --write`). The npm-publish workflow's "not configured" warning had a garbled word and now reads "npm publishing is not configured". The built site is identical to the previous commit's.
 
 ## [0.0.54] - 2026-11-20
